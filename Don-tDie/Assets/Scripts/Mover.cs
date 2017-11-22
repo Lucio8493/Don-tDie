@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mover : MonoBehaviour {
 
 	public float speed;
+	public int bounces;
 
 	private Rigidbody2D rb;
 	private Ray2D ActualDir;
@@ -22,7 +23,7 @@ public class Mover : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.CompareTag ("Player")) {
-			print ("colpito");
+			other.gameObject.SendMessage ("GameOver");
 		}
 		else if(other.gameObject.CompareTag("Background")){
 			//ActualDir.direction.x rappresenta il coseno
@@ -155,8 +156,11 @@ public class Mover : MonoBehaviour {
 	void Bounce(Collider2D other){
 		speed = 1.5f * speed;
 		rb.AddForce (ActualDir.direction * speed);
-		if (count == 5)
+		if (count == bounces) {
 			Destroy (this.gameObject);
+			GameObject pl = GameObject.FindGameObjectWithTag ("Player");
+			pl.SendMessage ("AddPoint");
+		}
 		else
 			count++;
 	}

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Background
   - Shot
+  - Points
   layers:
   - Default
   - TransparentFX
