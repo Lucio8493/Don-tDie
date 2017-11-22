@@ -207,7 +207,7 @@ MonoBehaviour:
   speed: 10
   shot: {fileID: 1728401372035316, guid: 80d8fc3f43cf1834299b7c8fce0e4d2a, type: 2}
   shotSpawn: {fileID: 935653365}
-  fireRate: 0.5
+  fireRate: 1
 --- !u!50 &9117035
 Rigidbody2D:
   serializedVersion: 4
@@ -467,6 +467,11 @@ Prefab:
     - target: {fileID: 4311896908860820, guid: 28bd99c5db4d50840b5682e63c1aafe4, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114537434089708298, guid: 28bd99c5db4d50840b5682e63c1aafe4,
+        type: 2}
+      propertyPath: fireRate
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28bd99c5db4d50840b5682e63c1aafe4, type: 2}

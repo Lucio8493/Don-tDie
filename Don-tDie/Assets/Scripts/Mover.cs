@@ -5,8 +5,10 @@ using UnityEngine;
 public class Mover : MonoBehaviour {
 
 	public float speed;
+
 	private Rigidbody2D rb;
 	private Ray2D ActualDir;
+	private int count;
 
 	// Use this for initialization
 	void Start () {
@@ -15,11 +17,12 @@ public class Mover : MonoBehaviour {
 		difference.Normalize();
 		ActualDir = new Ray2D (transform.position, difference);
 		rb.AddForce (ActualDir.direction * speed);
+		count = 0;
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.CompareTag ("Player")) {
-			//print ("colpito");
+			print ("colpito");
 		}
 		else if(other.gameObject.CompareTag("Background")){
 			//ActualDir.direction.x rappresenta il coseno
@@ -37,8 +40,7 @@ public class Mover : MonoBehaviour {
 						angle = Mathf.PI / 2 + angle;
 						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
 						ActualDir = new Ray2D (transform.position, vett);
-						speed += speed;
-						rb.AddForce (ActualDir.direction * speed);
+						Bounce (other);
 						//nuova direzione q2
 					} 
 					else if (collider == 2){
@@ -46,8 +48,7 @@ public class Mover : MonoBehaviour {
 						angle =  angle- Mathf.PI / 2 ;
 						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
 						ActualDir = new Ray2D (transform.position, vett);
-						speed += speed;
-						rb.AddForce (ActualDir.direction * speed);
+						Bounce (other);
 						//nuova direzione q4
 					} 
 					else
@@ -61,8 +62,7 @@ public class Mover : MonoBehaviour {
 						angle = angle + Mathf.PI;
 						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
 						ActualDir = new Ray2D (transform.position, vett);
-						speed += speed;
-						rb.AddForce (ActualDir.direction * speed);
+						Bounce (other);
 						//nuova direzione q3
 					} 
 					else if(collider==3){
@@ -70,8 +70,7 @@ public class Mover : MonoBehaviour {
 						angle =angle - Mathf.PI/2 ;
 						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
 						ActualDir = new Ray2D (transform.position, vett);
-						speed += speed;
-						rb.AddForce (ActualDir.direction * speed);
+						Bounce (other);
 						//nuova direzione q1
 					} 
 					else
@@ -85,8 +84,7 @@ public class Mover : MonoBehaviour {
 						angle = angle + Mathf.PI;
 						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
 						ActualDir = new Ray2D (transform.position, vett);
-						speed += speed;
-						rb.AddForce (ActualDir.direction * speed);
+						Bounce (other);
 						//nuova direzione q4
 					} 
 					else if(collider==4){
@@ -94,8 +92,7 @@ public class Mover : MonoBehaviour {
 						angle =  angle - Mathf.PI ;
 						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
 						ActualDir = new Ray2D (transform.position, vett);
-						speed += speed;
-						rb.AddForce (ActualDir.direction * speed);
+						Bounce (other);
 						//nuova direzione q2
 					} 
 					else 
@@ -109,8 +106,7 @@ public class Mover : MonoBehaviour {
 						angle = Mathf.PI / 2 + angle;
 						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
 						ActualDir = new Ray2D (transform.position, vett);
-						speed += speed;
-						rb.AddForce (ActualDir.direction * speed);
+						Bounce (other);
 						//nuova direzione q1
 					} 
 					else if(collider==1){
@@ -118,8 +114,7 @@ public class Mover : MonoBehaviour {
 						angle = angle-Mathf.PI / 2;
 						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
 						ActualDir = new Ray2D (transform.position, vett);
-						speed += speed;
-						rb.AddForce (ActualDir.direction * speed);
+						Bounce (other);
 						//nuova direzione q3
 					} 
 					else
@@ -155,6 +150,15 @@ public class Mover : MonoBehaviour {
 			return 2; //collider superiore
 		else
 			return 0; //errore
+	}
+
+	void Bounce(Collider2D other){
+		speed = 1.5f * speed;
+		rb.AddForce (ActualDir.direction * speed);
+		if (count == 5)
+			Destroy (this.gameObject);
+		else
+			count++;
 	}
 
 }
