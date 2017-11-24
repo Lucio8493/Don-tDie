@@ -25,6 +25,13 @@ public class Mover : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			other.gameObject.SendMessage ("GameOver");
 		}
+		else if(other.gameObject.CompareTag ("Shot")){
+			rb.velocity =new Vector2(0.0f,0.0f);
+			ActualDir = new Ray2D(-1*ActualDir.origin,-1*ActualDir.direction);
+			speed = 1.5f * speed;
+			rb.AddForce (ActualDir.direction * speed);
+			count++;
+		}
 		else if(other.gameObject.CompareTag("Background")){
 			//ActualDir.direction.x rappresenta il coseno
 			//ActualDir.direction.y rappresenta il seno
