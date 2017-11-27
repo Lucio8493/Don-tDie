@@ -1,10 +1,30 @@
-# Example Travis config. See the entire example: https://github.com/JonathanPorta/ci-build
+# do not install anything extra onto the image
+language: generic
 
-language: objective-c
-osx_image: xcode61
-rvm:
-- 2.1.2
+# use a Mac OSX image
+os: osx
+
+# only run builds on pushes to the master branch
+branches:
+  only:
+  - master
+
+# send email notifications when the build changes from succeeding to broken
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+# run the script to download and install Unity editor
 install:
-- ./Scripts/install.sh
+- sudo -E sh ./Scripts/install.sh
+
+# run the script for builds
 script:
-- ./Scripts/build.sh
+- sudo -E sh ./Scripts/build.sh
+
+
+# environment variables used in bash scripts
+env:
+  global:
+  - UNITYCI_PROJECT_NAME="Don-tDie"

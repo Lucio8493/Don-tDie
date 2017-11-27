@@ -1,39 +1,39 @@
 #! /bin/sh
 
-# Example build script for Unity3D project. See the entire example: https://github.com/JonathanPorta/ci-build
+# NOTE the command args below make the assumption that your Unity project folder is
+#  a subdirectory of the repo root directory, e.g. for this repo "unity-ci-test" 
+#  the project folder is "UnityProject". If this is not true then adjust the 
+#  -projectPath argument to point to the right location.
 
-# Change this the name of your project. This will be the name of the final executables as well.
-project="Don-tDie"
+## Make the builds
+# Recall from install.sh that a separate module was needed for Windows build support
+#echo "Attempting build of ${UNITYCI_PROJECT_NAME} for Windows"
+#/Applications/Unity/Unity.app/Contents/MacOS/Unity \
+#	-batchmode \
+#	-nographics \
+#	-silent-crashes \
+#	-logFile $(pwd)/unity.log \
+#	-projectPath "$(pwd)/${UNITYCI_PROJECT_NAME}" \
+#	-buildWindowsPlayer "$(pwd)/Build/windows/${UNITYCI_PROJECT_NAME}.exe" \
+#	-quit
 
-echo "Attempting to build $project for Windows"
+#rc1=$?
+#echo "Build logs (Windows)"
+#cat $(pwd)/unity.log
+
+echo "Attempting build of ${UNITYCI_PROJECT_NAME} for OSX"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
-  -batchmode \
-  -nographics \
-  -silent-crashes \
-  -logFile $(pwd)/unity.log \
-  -projectPath $(pwd) \
-  -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe" \
-  -quit
+	-batchmode \
+	-nographics \
+	-silent-crashes \
+	-logFile $(pwd)/unity.log \
+	-projectPath "$(pwd)/${UNITYCI_PROJECT_NAME}" \
+	-buildOSXUniversalPlayer "$(pwd)/Build/osx/${UNITYCI_PROJECT_NAME}.app" \
+	-quit
 
-echo "Attempting to build $project for OS X"
-/Applications/Unity/Unity.app/Contents/MacOS/Unity \
-  -batchmode \
-  -nographics \
-  -silent-crashes \
-  -logFile $(pwd)/unity.log \
-  -projectPath $(pwd) \
-  -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
-  -quit
-
-echo "Attempting to build $project for Linux"
-/Applications/Unity/Unity.app/Contents/MacOS/Unity \
-  -batchmode \
-  -nographics \
-  -silent-crashes \
-  -logFile $(pwd)/unity.log \
-  -projectPath $(pwd) \
-  -buildLinuxUniversalPlayer "$(pwd)/Build/linux/$project.exe" \
-  -quit
-
-echo 'Logs from build'
+rc2=$?
+echo "Build logs (OSX)"
 cat $(pwd)/unity.log
+
+#Remeber to add exit $(($rc1|$rc2))
+exit $(($rc2))
