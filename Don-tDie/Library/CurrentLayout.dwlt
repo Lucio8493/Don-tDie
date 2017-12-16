@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 508, y: 342}
   m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
-  controlID: 110
+  controlID: 104
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -521,21 +521,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 8ea7ffffa6a7ffffcca9ffffaaaeffffc2aeffff2ab1ffff86b3ffff9eb3ffff06b6ffffa6b8ffffbeb8ffff4abbffffa6c2ffffbec2ffff34c5ffffc6c9ffffdec9ffff04ccffff1ed1ffff36d1ffff92d3ffffdadbfffff2dbffffa0deffff72e4ffff8ae4ffff54e7ffffa0fbffff00000000
+    m_ExpandedIDs: a0fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: EventSystem
-      m_OriginalName: EventSystem
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 10578
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -745,7 +745,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 66270000
     m_LastClickedID: 10086
-    m_ExpandedIDs: 00000000302700007828000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000003027000078280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
