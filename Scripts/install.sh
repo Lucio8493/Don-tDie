@@ -11,7 +11,7 @@ if [ $? -ne 0 ]; then { echo "Download failed"; exit $?; } fi
 # By default, only Mac OSX support is included in the original editor package; Windows, Linux, iOS, Android, and others are separate
 # In this example we download Android support. Refer to http://unity.grimdork.net/ to see what form the URLs should take
 echo 'Downloading Unity 5.5.1 Android Build Support pkg:'
-curl --retry 5 -o Unity_android.pkg https://beta.unity3d.com/download/d3a5469e8c44/MacEditorTargetInstaller/UnitySetup-Android-Support-for-Editor-2017.3.0f2.pkg
+curl --retry 5 -o Unity_android.pkg https://beta.unity3d.com/download/d3a5469e8c44/MacEditorTargetInstaller/UnitySetup-Android-Support-for-Editor-2017.2.0f3.pkg
 if [ $? -ne 0 ]; then { echo "Download failed"; exit $?; } fi
 
 # Run installer(s)
