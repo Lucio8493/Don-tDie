@@ -9,13 +9,13 @@ if [ $? -ne 0 ]; then { echo "Download failed"; exit $?; } fi
 
 # In Unity 5 they split up build platform support into modules which are installed separately
 # By default, only Mac OSX support is included in the original editor package; Windows, Linux, iOS, Android, and others are separate
-# In this example we download Windows support. Refer to http://unity.grimdork.net/ to see what form the URLs should take
-echo 'Downloading Unity 5.5.1 Windows Build Support pkg:'
-curl --retry 5 -o Unity_win.pkg https://beta.unity3d.com/download/46dda1414e51/MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-2017.2.0f3.pkg
+# In this example we download Android support. Refer to http://unity.grimdork.net/ to see what form the URLs should take
+echo 'Downloading Unity 5.5.1 Android Build Support pkg:'
+curl --retry 5 -o Unity_android.pkg https://beta.unity3d.com/download/d3a5469e8c44/MacEditorTargetInstaller/UnitySetup-Android-Support-for-Editor-2017.3.0f2.pkg
 if [ $? -ne 0 ]; then { echo "Download failed"; exit $?; } fi
 
 # Run installer(s)
 echo 'Installing Unity.pkg'
 sudo installer -dumplog -package Unity.pkg -target /
-echo 'Installing Unity_win.pkg'
-sudo installer -dumplog -package Unity_win.pkg -target /
+echo 'Installing Unity_android.pkg'
+sudo installer -dumplog -package Unity_android.pkg -target /

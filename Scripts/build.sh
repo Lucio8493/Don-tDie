@@ -7,18 +7,18 @@
 
 ## Make the builds
 # Recall from install.sh that a separate module was needed for Windows build support
-echo "Attempting build of ${UNITYCI_PROJECT_NAME} for Windows"
+echo "Attempting build of ${UNITYCI_PROJECT_NAME} for Android"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
 	-batchmode \
 	-nographics \
 	-silent-crashes \
 	-logFile $(pwd)/unity.log \
 	-projectPath "$(pwd)/${UNITYCI_PROJECT_NAME}" \
-	-buildWindowsPlayer "$(pwd)/Build/windows/${UNITYCI_PROJECT_NAME}.exe" \
+	-buildAndroidPlayer "$(pwd)/Build/android/${UNITYCI_PROJECT_NAME}.apk" \
 	-quit
 
 rc1=$?
-echo "Build logs (Windows)"
+echo "Build logs (Android)"
 cat $(pwd)/unity.log
 
 echo "Attempting build of ${UNITYCI_PROJECT_NAME} for OSX"
