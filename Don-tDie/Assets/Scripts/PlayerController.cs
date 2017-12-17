@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody2D rb;
 	private float nextFire;
 	private int points;
+	private bool first;
 
 
 	// Use this for initialization
@@ -28,24 +29,30 @@ public class PlayerController : MonoBehaviour {
 		restart.gameObject.SetActive (false);
 		Button btn = restart.GetComponent<Button> ();
 		btn.onClick.AddListener (Reset);
+		first = true;
 	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate () {
-		float moveHorizontal = Input.GetAxis("Horizontal");
-		float moveVertical = Input.GetAxis("Vertical");
+		float moveHorizontal = Input.acceleration.x;
+		float moveVertical = Input.acceleration.y;
 
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
 		rb.velocity = movement*speed;
 
-		Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+		Vector3 difference = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position) - transform.position;
 		difference.Normalize();
 		float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.Euler(0f, 0f, rotation_z-90f);
 	}
 
 	void Update(){
-		if (Time.time > nextFire) { 
+		if (first && Input.touches.Length>0) {
+			nextFire = Time.time + fireRate; 
+			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+			first = false;
+		}
+		else if (!first && Time.time > nextFire) { 
 
 			nextFire = Time.time + fireRate; 
 			Instantiate(shot, shotSpawn.position, shotSpawn.rotation); 
@@ -65,6 +72,7 @@ public class PlayerController : MonoBehaviour {
 			Destroy (t [i]);
 		gameObject.SetActive (false);
 		gameOverLabel.gameObject.SetActive (true);
+		pointsLabel.fontSize = 60;
 		restart.gameObject.SetActive (true);
 	}
 
