@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour {
 	private float nextFire;
 	private int points;
 	private bool first;
+	private Quaternion actualRotation;
 
 
 	// Use this for initialization
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour {
 		Button btn = restart.GetComponent<Button> ();
 		btn.onClick.AddListener (Reset);
 		first = true;
+		actualRotation = Quaternion.Euler (0f,0f,0f);
 	}
 
 	// Update is called once per frame
@@ -40,10 +42,11 @@ public class PlayerController : MonoBehaviour {
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
 		rb.velocity = movement*speed;
 
+		transform.rotation = actualRotation;
 		Vector3 difference = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position) - transform.position;
 		difference.Normalize();
 		float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-		transform.rotation = Quaternion.Euler(0f, 0f, rotation_z-90f);
+		actualRotation = Quaternion.Euler(0f, 0f, rotation_z-90f);
 	}
 
 	void Update(){

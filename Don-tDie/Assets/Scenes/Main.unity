@@ -627,6 +627,11 @@ Prefab:
       propertyPath: restart
       value: 
       objectReference: {fileID: 2025960818}
+    - target: {fileID: 50394474398963066, guid: 28bd99c5db4d50840b5682e63c1aafe4,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28bd99c5db4d50840b5682e63c1aafe4, type: 2}
   m_IsPrefabParent: 0
@@ -688,6 +693,26 @@ Prefab:
     - target: {fileID: 4734444147571308, guid: 3d01fb2ae66d8774193078034ddb6d81, type: 2}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61749279033456930, guid: 3d01fb2ae66d8774193078034ddb6d81,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61749279033456930, guid: 3d01fb2ae66d8774193078034ddb6d81,
+        type: 2}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61749279033456930, guid: 3d01fb2ae66d8774193078034ddb6d81,
+        type: 2}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212590564880072596, guid: 3d01fb2ae66d8774193078034ddb6d81,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d01fb2ae66d8774193078034ddb6d81, type: 2}
