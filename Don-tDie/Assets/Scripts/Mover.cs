@@ -30,11 +30,24 @@ public class Mover : MonoBehaviour {
 		else if(other.gameObject.CompareTag ("Shot")){ // in questo if entriamo se un colpo ("shot") collide con un altro colpo
 			rb.velocity =new Vector2(0.0f,0.0f);
 			ActualDir = new Ray2D(-1*ActualDir.origin,-1*ActualDir.direction);
-			speed = 1.5f * speed;
-			rb.AddForce (ActualDir.direction * speed);
-			count++;
+            /*
+           speed = 1.5f * speed;          
+           rb.AddForce (ActualDir.direction * speed);
+           //count++;
+           //codice copiato dalla funzione "bounce", pensare ad un refactor per fare eliminare ridondanza
+           if (count == bounces)
+           {   // se count è uguale a "bounces" allora il colpo ha fatto abbastanza rimbalzi e può essere eliminato. (per sapere di più su bounces vedere sopra)
+               Destroy(this.gameObject);
+               GameObject pl = GameObject.FindGameObjectWithTag("Player");
+               pl.SendMessage("AddPoint");
+           }
+           else // altrimenti il colpo non ha fatto abbastanza rimbalzi, quindi rimane in gioco e viene incrementato il suo count per tenere traccia di quante volte ha rimbalzato
+               count++;
+           /* ********************************* */
 
-            
+           Bounce(other);
+
+
         }
 		else if(other.gameObject.CompareTag("Background")){ // in questo if entriamo se un colpo ("shot") collide con uno dei quattro bordi dello schermo
             //ActualDir.direction.x rappresenta il coseno
