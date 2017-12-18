@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour {
 		if (Time.time > nextFire) { 
 
 			nextFire = Time.time + fireRate; 
-			Instantiate(shot, shotSpawn.position, shotSpawn.rotation); 
+			Instantiate(shot, shotSpawn.position, shotSpawn.rotation); //crea il colpo, se si cancella il colpo non appare mai
 
 		}
 

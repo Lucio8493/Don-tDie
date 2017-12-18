@@ -9,7 +9,7 @@ public class Pause : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown("p")) // esegue l'operazione dentro l'if quando viene premuto il pulsante "p" da tastira
+        if (Input.GetKeyDown("p")) // esegue l'operazione dentro l'if quando viene premuto il pulsante "p" da tastiera
         {
             paused = !paused; // paused diventa l'opposto
         }
