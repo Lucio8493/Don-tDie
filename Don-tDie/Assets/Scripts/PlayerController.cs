@@ -28,10 +28,10 @@ public class PlayerController : MonoBehaviour {
 		restart.gameObject.SetActive (false);
 		Button btn = restart.GetComponent<Button> ();
 		btn.onClick.AddListener (Reset);
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
 		float moveHorizontal = Input.GetAxis("Horizontal");
 		float moveVertical = Input.GetAxis("Vertical");
 

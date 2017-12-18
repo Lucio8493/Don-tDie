@@ -11,15 +11,18 @@ public class Mover : MonoBehaviour {
 	private Rigidbody2D rb;
 	private Ray2D ActualDir;
 	private int count; // i rimbalzi che il colpo ha gia fatto
+    Vector3 difference; // il vettore della direzione del colpo, mi servirà poi per andare a calcolare la direzione dopo il rimbalzo
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		rb = GetComponent<Rigidbody2D> ();
-		Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+		difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; 
 		difference.Normalize();
 		ActualDir = new Ray2D (transform.position, difference);
 		rb.AddForce (ActualDir.direction * speed);
 		count = 0;
+
+
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
@@ -29,23 +32,9 @@ public class Mover : MonoBehaviour {
         }
 		else if(other.gameObject.CompareTag ("Shot")){ // in questo if entriamo se un colpo ("shot") collide con un altro colpo
 			rb.velocity =new Vector2(0.0f,0.0f);
-			ActualDir = new Ray2D(-1*ActualDir.origin,-1*ActualDir.direction);
-            /*
-           speed = 1.5f * speed;          
-           rb.AddForce (ActualDir.direction * speed);
-           //count++;
-           //codice copiato dalla funzione "bounce", pensare ad un refactor per fare eliminare ridondanza
-           if (count == bounces)
-           {   // se count è uguale a "bounces" allora il colpo ha fatto abbastanza rimbalzi e può essere eliminato. (per sapere di più su bounces vedere sopra)
-               Destroy(this.gameObject);
-               GameObject pl = GameObject.FindGameObjectWithTag("Player");
-               pl.SendMessage("AddPoint");
-           }
-           else // altrimenti il colpo non ha fatto abbastanza rimbalzi, quindi rimane in gioco e viene incrementato il suo count per tenere traccia di quante volte ha rimbalzato
-               count++;
-           /* ********************************* */
-
-           Bounce(other);
+            difference = new Vector3(-1 * difference.x, -1*difference.y, difference.z); // quando un colpo collide con un un altro va nella direzione opposta a quella in cui andava prima
+            ActualDir = new Ray2D(transform.position, difference);
+            Bounce(other);
 
 
         }
@@ -54,115 +43,46 @@ public class Mover : MonoBehaviour {
             //ActualDir.direction.y rappresenta il seno
 
             rb.velocity =new Vector2(0.0f,0.0f);
-			int quarter = CheckQuarter ();
 			int collider = CheckCollider (other);
+            switch (collider)
+            {
+                case 1: //in questo caso siamo nel bordo di destra, quello che deve cambiare è la componente x del vettore
+                    {
+                        difference = new Vector3(-1 * difference.x, difference.y, difference.z);
+                        ActualDir = new Ray2D(transform.position, difference);
+                        Bounce(other);
+                        break;
+                    }
+                case 2: //in questo caso il colpo collide col bordo superiore, quello che deve cambiare è la componente y del vettore
+                    {
+                        difference = new Vector3(difference.x, -1*difference.y, difference.z);
+                        ActualDir = new Ray2D(transform.position, difference);
+                        Bounce(other);
+                        break;
+                    }
+                case 3: //in questo caso il colpo collide col bordo di sinistra, quello che deve cambiare è la componente x del vettore
+                    {
+                        difference = new Vector3(-1 * difference.x, difference.y, difference.z);
+                        ActualDir = new Ray2D(transform.position, difference);
+                        Bounce(other);
+                        break;
+                    }
+                case 4: //in questo caso il colpo collide col bordo inferiore, quello che deve cambiare è la componente y del vettore
+                    {
+                        difference = new Vector3(difference.x, -1 * difference.y, difference.z);
+                        ActualDir = new Ray2D(transform.position, difference);
+                        Bounce(other);
+                        break;
+                    }
+                default:
+                    {
 
-			switch (quarter)
-			{
-			case 1:
-				{
-					if (collider == 1) {
-						float angle = Mathf.Asin (ActualDir.direction.y);
-						angle = Mathf.PI / 2 + angle;
-						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
-						ActualDir = new Ray2D (transform.position, vett);
-						Bounce (other);
-						//nuova direzione q2
-					} 
-					else if (collider == 2){
-						float angle = Mathf.Asin (ActualDir.direction.y);
-						angle =  angle- Mathf.PI / 2 ;
-						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
-						ActualDir = new Ray2D (transform.position, vett);
-						Bounce (other);
-						//nuova direzione q4
-					} 
-					else
-						print("errore");//errore
-					break;
-				}
-			case 2:
-				{
-					if(collider==2){
-						float angle = Mathf.Asin (ActualDir.direction.y);
-						angle = angle + Mathf.PI;
-						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
-						ActualDir = new Ray2D (transform.position, vett);
-						Bounce (other);
-						//nuova direzione q3
-					} 
-					else if(collider==3){
-						float angle = Mathf.Acos (ActualDir.direction.x);
-						angle =angle - Mathf.PI/2 ;
-						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
-						ActualDir = new Ray2D (transform.position, vett);
-						Bounce (other);
-						//nuova direzione q1
-					} 
-					else
-						print("errore");//errore
-					break;
-				}
-			case 3:
-				{
-					if(collider==3){
-						float angle = Mathf.Acos (ActualDir.direction.x);
-						angle = angle + Mathf.PI;
-						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
-						ActualDir = new Ray2D (transform.position, vett);
-						Bounce (other);
-						//nuova direzione q4
-					} 
-					else if(collider==4){
-						float angle = Mathf.Asin (ActualDir.direction.y);
-						angle =  angle - Mathf.PI ;
-						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
-						ActualDir = new Ray2D (transform.position, vett);
-						Bounce (other);
-						//nuova direzione q2
-					} 
-					else 
-						print("errore");//errore
-					break;
-				}
-			default://quadrante 4
-				{
-					if(collider==4){
-						float angle = Mathf.Asin (ActualDir.direction.y);
-						angle = Mathf.PI / 2 + angle;
-						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
-						ActualDir = new Ray2D (transform.position, vett);
-						Bounce (other);
-						//nuova direzione q1
-					} 
-					else if(collider==1){
-						float angle = Mathf.Asin (ActualDir.direction.y);
-						angle = angle-Mathf.PI / 2;
-						Vector2 vett = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
-						ActualDir = new Ray2D (transform.position, vett);
-						Bounce (other);
-						//nuova direzione q3
-					} 
-					else
-						print("errore");//errore
-					break;
-				}
-			}
-		}
-	}
+                        break;
+                    }
+            }
+        }
+    }
 
-	//Metodo che restituisce il quadrante in cui giace la direzione del proiettile
-	int CheckQuarter(){
-		if (ActualDir.direction.x >= 0)
-			if (ActualDir.direction.y >= 0)
-				return 1;
-			else
-				return 4;
-		else if (ActualDir.direction.y >= 0)
-				return 2;
-			else
-				return 3;
-	}
 
 	//Metodo che restituisce il collider del Background colpito
 	int CheckCollider(Collider2D other){
