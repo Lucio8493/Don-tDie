@@ -14,7 +14,7 @@ echo "Attempting build of ${UNITYCI_PROJECT_NAME} for Android"
 	-silent-crashes \
 	-logFile $(pwd)/unity.log \
 	-projectPath "$(pwd)/${UNITYCI_PROJECT_NAME}" \
-	-buildAndroidPlayer "$(pwd)/Build/android/${UNITYCI_PROJECT_NAME}.apk" \
+	-buildTarget.Android "$(pwd)/Build/android/${UNITYCI_PROJECT_NAME}.apk" \
 	-quit
 
 rc1=$?
