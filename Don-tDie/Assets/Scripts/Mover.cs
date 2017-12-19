@@ -11,12 +11,28 @@ public class Mover : MonoBehaviour {
 	private Rigidbody2D rb;
 	private Ray2D ActualDir;
 	private int count; // i rimbalzi che il colpo ha gia fatto
-    Vector3 difference; // il vettore della direzione del colpo, mi servirà poi per andare a calcolare la direzione dopo il rimbalzo
+    private Vector3 difference; // il vettore della direzione del colpo, mi servirà poi per andare a calcolare la direzione dopo il rimbalzo
+
+
+	//Metodo per il settaggio dello stato  nellla fase di testing
+	public void Construct ( float speed, int bounces, Ray2D ActualDir, int count, Vector3 difference){
+		this.speed = speed;
+		this.bounces = bounces;
+		this.ActualDir = ActualDir;
+		this.count = count;
+		this.difference = difference;
+	}
 
     // Use this for initialization
     void Start () {
 		rb = GetComponent<Rigidbody2D> ();
-		difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; 
+		//Viene catturata l'eccezione per consentire di eseguire dei test automatici
+		try{
+			difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; 
+		}
+		catch(System.NullReferenceException e){
+			difference = new Vector3 (4, 4, 0);
+		}
 		difference.Normalize();
 		ActualDir = new Ray2D (transform.position, difference);
 		rb.AddForce (ActualDir.direction * speed);
@@ -34,7 +50,7 @@ public class Mover : MonoBehaviour {
 			rb.velocity =new Vector2(0.0f,0.0f);
             difference = new Vector3(-1 * difference.x, -1*difference.y, difference.z); // quando un colpo collide con un un altro va nella direzione opposta a quella in cui andava prima
             ActualDir = new Ray2D(transform.position, difference);
-            Bounce(other);
+            Bounce();
 
 
         }
@@ -50,28 +66,28 @@ public class Mover : MonoBehaviour {
                     {
                         difference = new Vector3(-1 * difference.x, difference.y, difference.z);
                         ActualDir = new Ray2D(transform.position, difference);
-                        Bounce(other);
+                        Bounce();
                         break;
                     }
                 case 2: //in questo caso il colpo collide col bordo superiore, quello che deve cambiare è la componente y del vettore
                     {
                         difference = new Vector3(difference.x, -1*difference.y, difference.z);
                         ActualDir = new Ray2D(transform.position, difference);
-                        Bounce(other);
+                        Bounce();
                         break;
                     }
                 case 3: //in questo caso il colpo collide col bordo di sinistra, quello che deve cambiare è la componente x del vettore
                     {
                         difference = new Vector3(-1 * difference.x, difference.y, difference.z);
                         ActualDir = new Ray2D(transform.position, difference);
-                        Bounce(other);
+                        Bounce();
                         break;
                     }
                 case 4: //in questo caso il colpo collide col bordo inferiore, quello che deve cambiare è la componente y del vettore
                     {
                         difference = new Vector3(difference.x, -1 * difference.y, difference.z);
                         ActualDir = new Ray2D(transform.position, difference);
-                        Bounce(other);
+                        Bounce();
                         break;
                     }
                 default:
@@ -98,8 +114,8 @@ public class Mover : MonoBehaviour {
 			return 0; //errore
 	}
 
-	void Bounce(Collider2D other){
-		speed = 1.5f * speed;
+	void Bounce(){
+		speed = 1.1f * speed;
 		rb.AddForce (ActualDir.direction * speed);
 		if (count == bounces) {   // se count è uguale a "bounces" allora il colpo ha fatto abbastanza rimbalzi e può essere eliminato. (per sapere di più su bounces vedere sopra)
 			Destroy (this.gameObject);

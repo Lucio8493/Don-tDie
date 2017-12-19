@@ -7,15 +7,11 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour {
 
 	public float speed;
-	public GameObject shot;
-	public Transform shotSpawn;
-	public float fireRate;
 	public Text pointsLabel;
 	public Text gameOverLabel;
 	public Button restart;
 
 	private Rigidbody2D rb;
-	private float nextFire;
 	private int points;
 
 
@@ -45,13 +41,6 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update(){
-		if (Time.time > nextFire) { 
-
-			nextFire = Time.time + fireRate; 
-			Instantiate(shot, shotSpawn.position, shotSpawn.rotation); //crea il colpo, se si cancella il colpo non appare mai
-
-		}
-
 	}
 
 	void AddPoint(){
