@@ -2,13 +2,18 @@
 using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class Tests {
 
+
 	// A UnityTest behaves like a coroutine in PlayMode
 	// and allows you to yield null to skip a frame in EditMode
-	/*[UnityTest]
+
+	#if UNITY_EDITOR
+	[UnityTest]
 	public IEnumerator PrefabTest() {
 
 
@@ -19,10 +24,11 @@ public class Tests {
 		yield return null;
 		
 		var SpawnedShot = GameObject.FindWithTag("Shot");
+
 		var SpawnedPrefab = PrefabUtility.GetPrefabParent (SpawnedShot);
 		Assert.AreEqual (ShotPrefab, SpawnedPrefab);
 	}
-	*/
+	#endif
 
 	//Test che verifica il metodo bounce dello script Mover (verifica il cambiamento di velocita')
 	[UnityTest]
@@ -43,4 +49,13 @@ public class Tests {
 		Assert.AreNotEqual (100, shot.speed);			
 	}
 
+	[TearDown]
+	public void TearDown(){
+		foreach (var gameObject in GameObject.FindGameObjectsWithTag("Shot")) {
+			Object.Destroy(gameObject);
+		}
+		foreach (var gameObject in GameObject.FindGameObjectsWithTag("Player")) {
+			Object.Destroy(gameObject);
+		}
+	}
 }

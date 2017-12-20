@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
+
 
 public class Shoot : MonoBehaviour {
 	
@@ -23,7 +27,11 @@ public class Shoot : MonoBehaviour {
 	void Update () {
 		if (Time.time > nextFire) { 
 			nextFire = Time.time + fireRate; 
-			GameObject shot =(GameObject) PrefabUtility.InstantiatePrefab (ShotPrefab);//crea il colpo, se si cancella il colpo non appare ma
+			#if UNITY_EDITOR
+			GameObject shot =(GameObject) PrefabUtility.InstantiatePrefab (ShotPrefab);//crea il colpo, se si cancella il colpo non appare
+			#elif UNITY_STANDALONE
+			GameObject shot = Instantiate(ShotPrefab);
+			#endif
 			shot.transform.position=transform.position;
 		}
 
