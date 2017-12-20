@@ -14,13 +14,23 @@ public class Mover : MonoBehaviour {
     private Vector3 difference; // il vettore della direzione del colpo, mi servirà poi per andare a calcolare la direzione dopo il rimbalzo
 
 
-	//Metodo per il settaggio dello stato  nellla fase di testing
+	//Metodi per il settaggio dello stato  nellla fase di testing
 	public void Construct ( float speed, int bounces, Ray2D ActualDir, int count, Vector3 difference){
 		this.speed = speed;
 		this.bounces = bounces;
 		this.ActualDir = ActualDir;
 		this.count = count;
 		this.difference = difference;
+	}
+
+	public void Construct ( float speed, int bounces, int count){
+		this.speed = speed;
+		this.bounces = bounces;
+		this.count = count;
+	}
+
+	public int GetCount(){
+		return count;
 	}
 
     // Use this for initialization
@@ -33,12 +43,11 @@ public class Mover : MonoBehaviour {
 		catch(System.NullReferenceException e){
 			difference = new Vector3 (4, 4, 0);
 		}
+
 		difference.Normalize();
 		ActualDir = new Ray2D (transform.position, difference);
 		rb.AddForce (ActualDir.direction * speed);
 		count = 0;
-
-
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
@@ -55,9 +64,7 @@ public class Mover : MonoBehaviour {
 
         }
 		else if(other.gameObject.CompareTag("Background")){ // in questo if entriamo se un colpo ("shot") collide con uno dei quattro bordi dello schermo
-            //ActualDir.direction.x rappresenta il coseno
-            //ActualDir.direction.y rappresenta il seno
-
+  
             rb.velocity =new Vector2(0.0f,0.0f);
 			int collider = CheckCollider (other);
             switch (collider)
@@ -115,9 +122,9 @@ public class Mover : MonoBehaviour {
 	}
 
 	void Bounce(){
-		speed = 1.1f * speed;
+		speed = 1.2f * speed;
 		rb.AddForce (ActualDir.direction * speed);
-		if (count == bounces) {   // se count è uguale a "bounces" allora il colpo ha fatto abbastanza rimbalzi e può essere eliminato. (per sapere di più su bounces vedere sopra)
+		if (count >= bounces) {   // se count è uguale a "bounces" allora il colpo ha fatto abbastanza rimbalzi e può essere eliminato. (per sapere di più su bounces vedere sopra)
 			Destroy (this.gameObject);
 			GameObject pl = GameObject.FindGameObjectWithTag ("Player");
 			pl.SendMessage ("AddPoint");

@@ -14,6 +14,23 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody2D rb;
 	private int points;
 
+	//Metodi per il settaggio dello stato della classe in fase di testing
+	public void Construct(float speed, int points, Text pointsLabel, Text gameOverLabel, Button restart){
+		this.speed = speed;
+		this.points = points;
+		this.pointsLabel = pointsLabel;
+		this.gameOverLabel = gameOverLabel;
+		this.restart = restart;
+	}
+	public void Construct(float speed, int points){
+		this.speed = speed;
+		this.points = points;
+	}
+
+
+	public int GetPoints(){
+		return points;
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -34,13 +51,16 @@ public class PlayerController : MonoBehaviour {
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
 		rb.velocity = movement*speed;
 
-		Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+		Vector3 difference;
+		try{
+			difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; 
+		}
+		catch(System.NullReferenceException e){
+			difference = new Vector3 (4, 4, 0);
+		}
 		difference.Normalize();
 		float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.Euler(0f, 0f, rotation_z-90f);
-	}
-
-	void Update(){
 	}
 
 	void AddPoint(){
@@ -60,12 +80,5 @@ public class PlayerController : MonoBehaviour {
 
 	void Reset(){
 		SceneManager.LoadScene ("Main");
-		/*rb.position.Set (gameOverLabel.gameObject.transform.position.x, gameOverLabel.gameObject.transform.position.x);
-		rb.velocity.Set (0.0f, 0.0f);
-		points = 0;
-		pointsLabel.text = "Punti: " + points.ToString();
-		gameObject.SetActive (true);
-		gameOverLabel.gameObject.SetActive (false);
-		restart.gameObject.SetActive (false);*/
 	}
 }
