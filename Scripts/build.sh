@@ -13,8 +13,8 @@ echo "Running editor unit tests for ${UNITYCI_PROJECT_NAME}"
 	-silent-crashes \
 	-logFile $(pwd)/unity.log \
 	-projectPath "$(pwd)/${UNITYCI_PROJECT_NAME}" \
-	-runTests \
-	-testResults $(pwd)/test.xml \
+	-runEditorTests \
+	-editorTestsResultFile $(pwd)/test.xml \
 	-quit
 
 rc0=$?
