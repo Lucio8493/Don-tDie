@@ -12,9 +12,10 @@ echo "Running editor unit tests for ${UNITYCI_PROJECT_NAME}"
 	-nographics \
 	-silent-crashes \
 	-logFile $(pwd)/unity.log \
+	-runTests \
 	-projectPath "$(pwd)/${UNITYCI_PROJECT_NAME}" \
-	-runEditorTests \
-	-editorTestsResultFile $(pwd)/test.xml \
+	-testResults $(pwd)/test.xml \
+	-testPlatform playmode \
 	-quit
 
 rc0=$?
