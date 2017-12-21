@@ -6,10 +6,11 @@
 #  -projectPath argument to point to the right location.
 
 ## Run the editor unit tests
-echo "Running editor unit tests for ${UNITYCI_PROJECT_NAME}"
+echo "Running tests for ${UNITYCI_PROJECT_NAME}"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
 	-projectPath "$(pwd)/${UNITYCI_PROJECT_NAME}" \
 	-batchmode \
+	-nographics \
 	-runTests \
 	-testPlatform playmode \
 	-testResults "$(pwd)/${UNITYCI_PROJECT_NAME}"/test.xml \
