@@ -2,6 +2,7 @@
 using UnityEngine.TestTools;
 using UnityEngine.UI;
 using NUnit.Framework;
+using WindowsInput; // importato https://inputsimulator.codeplex.com/
 using System.Collections;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -65,6 +66,20 @@ public class PlayerTests {
     {
         yield return null; 		//si invoca il metodo per l'instanziazione del gameobject, viene eseguito start e una volta l'update
         Assert.AreEqual(0, player.GetPosY());
+    }
+
+    [UnityTest]
+    public IEnumerator PlayerControllerMoveUp()
+    {
+
+        float prec = player.GetPosX();
+        InputSimulator.SimulateKeyPress(VirtualKeyCode.VK_W); // simula la pressione su tastiera
+
+        yield return null;      //si invoca il metodo per l'instanziazione del gameobject, viene eseguito start e una volta l'update
+
+       //Assert.AreEqual(0, player.GetPosY());
+
+        Assert.Greater(player.GetPosY(), prec); // la posizione x deve essere maggiore di quella precedente
     }
 
 
