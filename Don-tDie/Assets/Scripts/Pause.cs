@@ -5,7 +5,13 @@ using UnityEngine;
 public class Pause : MonoBehaviour {
 
 
-    bool paused = false; // il gioco non comincia in pause, se si mette = true per far cominciare il gioco si dovrebbe premere p
+    public bool paused = false; // il gioco non comincia in pause, se si mette = true per far cominciare il gioco si dovrebbe premere p
+
+    bool GetPaused()
+    {
+        return paused;
+    }
+    
 
     void Update()
     {

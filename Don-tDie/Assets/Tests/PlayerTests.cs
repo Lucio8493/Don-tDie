@@ -69,18 +69,47 @@ public class PlayerTests {
     }
 
     [UnityTest]
-    public IEnumerator PlayerControllerMoveUp()
+    public IEnumerator PlayerControllerMoveDown() // test per controllare se il giocatore si muove in basso
     {
-
-        float prec = player.GetPosX();
-        InputSimulator.SimulateKeyPress(VirtualKeyCode.VK_W); // simula la pressione su tastiera
-
-        yield return null;      //si invoca il metodo per l'instanziazione del gameobject, viene eseguito start e una volta l'update
-
-       //Assert.AreEqual(0, player.GetPosY());
-
-        Assert.Greater(player.GetPosY(), prec); // la posizione x deve essere maggiore di quella precedente
+        float prec = player.GetPosY(); // prendo la posizione predecente che confronterò con la successiva
+        InputSimulator.SimulateKeyPress(VirtualKeyCode.VK_S); // simula la pressione su tastiera
+        yield return null;     //si invoca il metodo per l'instanziazione del gameobject, viene eseguito start e una volta l'update
+        //InputSimulator.SimulateKeyPress(VirtualKeyCode.VK_S); // simula la pressione su tastiera
+        Assert.GreaterOrEqual(prec, player.GetPosY()); // la posizione y deve essere minore di quella precedente
     }
+
+    [UnityTest]
+    public IEnumerator PlayerControllerMoveRight() // test per controllare se il giocatore si muove a destra
+    {
+        float prec = player.GetPosX();
+        InputSimulator.SimulateKeyPress(VirtualKeyCode.VK_D); // simula la pressione su tastiera
+        yield return null;     //si invoca il metodo per l'instanziazione del gameobject, viene eseguito start e una volta l'update
+        Assert.GreaterOrEqual(player.GetPosX(),prec); // la posizione x deve essere maggiore di quella precedente
+    }
+
+    [UnityTest]
+    public IEnumerator PlayerControllerMoveLeft() // test per controllare se il giocatore si muove a sinistra
+    {
+        float prec = player.GetPosX();
+        InputSimulator.SimulateKeyPress(VirtualKeyCode.VK_A); // simula la pressione su tastiera
+        yield return null;     //si invoca il metodo per l'instanziazione del gameobject, viene eseguito start e una volta l'update
+        Assert.GreaterOrEqual(prec, player.GetPosX()); // la posizione x deve essere minore di quella precedente
+    }
+
+    [UnityTest]
+    public IEnumerator PlayerControllerMoveUp() // test per controllare se il giocatore si muove in alto
+    {
+        float prec = player.GetPosY();
+        InputSimulator.SimulateKeyPress(VirtualKeyCode.VK_W); // simula la pressione su tastiera
+        yield return null;       //si invoca il metodo per l'instanziazione del gameobject, viene eseguito start e una volta l'update
+       //Assert.AreEqual(0, player.GetPosY());
+        Assert.GreaterOrEqual(player.GetPosY(), prec); // la posizione y deve essere maggiore di quella precedente
+    }
+
+
+   
+
+
 
 
     //Metodo per la pulizia dell'ambiente di lavoro, viene invocato dopo ogni test
