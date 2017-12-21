@@ -48,7 +48,8 @@ public class TestSuite {
 		//invocazione del metodo bounce su shot
 		shot.SendMessage ("Bounce");
 		//verifica dell'asserzione
-		Assert.AreNotEqual (100, shot.speed);			
+		Assert.AreNotEqual (100, shot.speed);
+			
 	}
 
 	//Test che verifica il metodo bounce dello script Mover (verifica il ramo if)
@@ -124,9 +125,26 @@ public class TestSuite {
 
 	}
 
+    //Test che controlla se ad inizio gioco il player abbia zero punti
+    [UnityTest]
+    public IEnumerator PlayerControllerZeroPoints()
+    {
+        var player = new GameObject().AddComponent<PlayerController>();//Viene creato un nuovo gameobject a cui si aggiunge lo script desiderato
+        player.tag = "Player";
+        player.gameObject.AddComponent<Rigidbody2D>();//Sintassi che consente di aggiungere il componete all'oggetto appena creato
+        var points = new GameObject().AddComponent<Text>();//serve a creare un oggetto di gioco con una label, questo verra' poi passato al costruttore del player
+        var gameOver = new GameObject().AddComponent<Text>();
+        var restart = new GameObject().AddComponent<Button>();
+        player.Construct(10, 0, points, gameOver, restart);
+        yield return null; 		//si invoca il metodo per l'instanziazione del gameobject, viene eseguito start e una volta l'update
+        Assert.AreEqual(0, player.GetPoints());
 
-	//Metodo per la pulizia dell'ambiente di lavoro, viene invocato dopo ogni test
-	[TearDown]
+    }
+
+
+
+    //Metodo per la pulizia dell'ambiente di lavoro, viene invocato dopo ogni test
+    [TearDown]
 	public void TearDown(){
 		//ricerca tutti gli oggetti di tipo shot e li distrugge
 		foreach (var gameObject in GameObject.FindGameObjectsWithTag("Shot")) {
