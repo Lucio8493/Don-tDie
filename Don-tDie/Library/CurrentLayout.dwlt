@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 504, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 49
+  controlID: 111
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -296,7 +296,7 @@ MonoBehaviour:
       name: Don-tDie
       fullName: Don-tDie
       resultStatus: 1
-      duration: 1.1663415
+      duration: 1.3699762
       messages: 
       output: 
       stacktrace: 
@@ -308,7 +308,7 @@ MonoBehaviour:
       name: Assembly-CSharp.dll
       fullName: D:/StRepositories/DD/Don-tDie/Library/ScriptAssemblies/Assembly-CSharp.dll
       resultStatus: 1
-      duration: 1.122801
+      duration: 1.3229045
       messages: 
       output: 
       stacktrace: 
@@ -320,7 +320,7 @@ MonoBehaviour:
       name: MoverTests
       fullName: MoverTests
       resultStatus: 1
-      duration: 0.3251325
+      duration: 0.3262911
       messages: 
       output: 
       stacktrace: 
@@ -332,7 +332,7 @@ MonoBehaviour:
       name: MoverBounceElseSide
       fullName: MoverTests.MoverBounceElseSide
       resultStatus: 1
-      duration: 0.0668143
+      duration: 0.0671466
       messages: 
       output: 
       stacktrace: 
@@ -344,7 +344,7 @@ MonoBehaviour:
       name: MoverBounceIfSide
       fullName: MoverTests.MoverBounceIfSide
       resultStatus: 1
-      duration: 0.0924705
+      duration: 0.0934874
       messages: 
       output: 
       stacktrace: 
@@ -356,7 +356,7 @@ MonoBehaviour:
       name: MoverBounceSpeedTest
       fullName: MoverTests.MoverBounceSpeedTest
       resultStatus: 1
-      duration: 0.066524
+      duration: 0.0663533
       messages: 
       output: 
       stacktrace: 
@@ -368,7 +368,7 @@ MonoBehaviour:
       name: PlayerTests
       fullName: PlayerTests
       resultStatus: 1
-      duration: 0.1984528
+      duration: 0.3974426
       messages: 
       output: 
       stacktrace: 
@@ -380,7 +380,31 @@ MonoBehaviour:
       name: PlayerControllerCountTest
       fullName: PlayerTests.PlayerControllerCountTest
       resultStatus: 1
-      duration: 0.0674331
+      duration: 0.0662764
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTests.PlayerControllerInitialPositionX]'
+      name: PlayerControllerInitialPositionX
+      fullName: PlayerTests.PlayerControllerInitialPositionX
+      resultStatus: 1
+      duration: 0.0663597
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTests.PlayerControllerInitialPositionY]'
+      name: PlayerControllerInitialPositionY
+      fullName: PlayerTests.PlayerControllerInitialPositionY
+      resultStatus: 1
+      duration: 0.0663324
       messages: 
       output: 
       stacktrace: 
@@ -392,7 +416,7 @@ MonoBehaviour:
       name: PlayerControllerZeroPoints
       fullName: PlayerTests.PlayerControllerZeroPoints
       resultStatus: 1
-      duration: 0.0657349
+      duration: 0.0661639
       messages: 
       output: 
       stacktrace: 
@@ -404,7 +428,7 @@ MonoBehaviour:
       name: TestSuite
       fullName: TestSuite
       resultStatus: 1
-      duration: 0.5142142
+      duration: 0.5130347
       messages: 
       output: 
       stacktrace: 
@@ -416,7 +440,7 @@ MonoBehaviour:
       name: MoverBounceElseSide
       fullName: TestSuite.MoverBounceElseSide
       resultStatus: 1
-      duration: 0.0499281
+      duration: 0.049934
       messages: 
       output: 
       stacktrace: 
@@ -428,7 +452,7 @@ MonoBehaviour:
       name: MoverBounceIfSide
       fullName: TestSuite.MoverBounceIfSide
       resultStatus: 1
-      duration: 0.0666523
+      duration: 0.0670598
       messages: 
       output: 
       stacktrace: 
@@ -440,7 +464,7 @@ MonoBehaviour:
       name: MoverBounceSpeedTest
       fullName: TestSuite.MoverBounceSpeedTest
       resultStatus: 1
-      duration: 0.049651
+      duration: 0.0497181
       messages: 
       output: 
       stacktrace: 
@@ -452,7 +476,7 @@ MonoBehaviour:
       name: PlayerControllerCountTest
       fullName: TestSuite.PlayerControllerCountTest
       resultStatus: 1
-      duration: 0.0500657
+      duration: 0.0500174
       messages: 
       output: 
       stacktrace: 
@@ -464,7 +488,7 @@ MonoBehaviour:
       name: PlayerControllerZeroPoints
       fullName: TestSuite.PlayerControllerZeroPoints
       resultStatus: 1
-      duration: 0.0498216
+      duration: 0.0496129
       messages: 
       output: 
       stacktrace: 
@@ -476,7 +500,7 @@ MonoBehaviour:
       name: PrefabTest
       fullName: TestSuite.PrefabTest
       resultStatus: 1
-      duration: 0.0497147
+      duration: 0.0497476
       messages: 
       output: 
       stacktrace: 
@@ -484,12 +508,12 @@ MonoBehaviour:
       ignoredOrSkipped: 0
       description: 
       isSuite: 0
-    m_ResultText: MoverTests (0.325s)
+    m_ResultText: PlayerControllerZeroPoints (0.066s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 742fef10
-      m_LastClickedID: 284110708
+      m_SelectedIDs: b6df1744
+      m_LastClickedID: 1142415286
       m_ExpandedIDs: b4337a97d82c99b652d5d2c3cd5292e3b123b4ee742fef103d6d3b14f3c15828ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -617,7 +641,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 3060ffff4860ffffa865ffffce8cffffe68cffff1292ffffd893fffff093ffff4099ffff0e9cffff269cffffc0a0ffff20a5ffff38a5ffffbeaaffffa6fbffff00000000
+    m_ExpandedIDs: 84abffff9cabffff22b7ffff3ab7ffff5abdffff2cbefffff2bfffff0ac0ffffdac6fffff6c9ffff0ecaffff8ecfffff2ed5ffff46d5ffff90daffff3aebffff52ebffff36f0ffff3cf2ffff54f2ffffcaf7ffff68fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -829,19 +853,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Tests
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Tests
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\StRepositories\DD\Don-tDie
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 72270000
-    m_LastClickedID: 10098
-    m_ExpandedIDs: 000000002c2700009628000000ca9a3bffffff7f
+    m_SelectedIDs: 28280000
+    m_LastClickedID: 10280
+    m_ExpandedIDs: 00000000ac2700000c29000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -869,7 +893,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002c27000096280000
+    m_ExpandedIDs: 00000000ac2700000c290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

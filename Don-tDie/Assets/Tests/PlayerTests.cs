@@ -21,7 +21,8 @@ public class PlayerTests {
     {
         player = new GameObject().AddComponent<PlayerController>();//Viene creato un nuovo gameobject a cui si aggiunge lo script desiderato
         player.tag = "Player";
-        player.gameObject.AddComponent<Rigidbody2D>();//Sintassi che consente di aggiungere il componete all'oggetto appena creato
+        Rigidbody2D rigid = player.gameObject.AddComponent<Rigidbody2D>();//Sintassi che consente di aggiungere il componete all'oggetto appena creato
+        rigid.gravityScale = 0; //serve per impostare la gravità a zero, AddComponet aggiunge un rigidBody di default che ha come gravità uno e che quindi fa scendere l'oggetto
         var points = new GameObject().AddComponent<Text>();//serve a creare un oggetto di gioco con una label, questo verra' poi passato al costruttore del player
         var gameOver = new GameObject().AddComponent<Text>();
         var restart = new GameObject().AddComponent<Button>();
@@ -52,6 +53,19 @@ public class PlayerTests {
         Assert.AreEqual(0, player.GetPoints());
     }
 
+    [UnityTest]
+    public IEnumerator PlayerControllerInitialPositionX()
+    {
+        yield return null; 		//si invoca il metodo per l'instanziazione del gameobject, viene eseguito start e una volta l'update
+        Assert.AreEqual(0, player.GetPosX());
+    }
+
+    [UnityTest]
+    public IEnumerator PlayerControllerInitialPositionY()
+    {
+        yield return null; 		//si invoca il metodo per l'instanziazione del gameobject, viene eseguito start e una volta l'update
+        Assert.AreEqual(0, player.GetPosY());
+    }
 
 
     //Metodo per la pulizia dell'ambiente di lavoro, viene invocato dopo ogni test

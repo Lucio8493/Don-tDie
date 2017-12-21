@@ -32,6 +32,16 @@ public class PlayerController : MonoBehaviour {
 		return points;
 	}
 
+    public float GetPosX()
+    {
+        return transform.position.x;
+    }
+
+    public float GetPosY()
+    {
+        return transform.position.y;
+    }
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
