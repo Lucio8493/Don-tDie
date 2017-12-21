@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 504, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 111
+  controlID: 49
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -296,7 +296,7 @@ MonoBehaviour:
       name: Don-tDie
       fullName: Don-tDie
       resultStatus: 1
-      duration: 0.8203302
+      duration: 1.1663415
       messages: 
       output: 
       stacktrace: 
@@ -308,7 +308,7 @@ MonoBehaviour:
       name: Assembly-CSharp.dll
       fullName: D:/StRepositories/DD/Don-tDie/Library/ScriptAssemblies/Assembly-CSharp.dll
       resultStatus: 1
-      duration: 0.7760523
+      duration: 1.122801
       messages: 
       output: 
       stacktrace: 
@@ -316,11 +316,59 @@ MonoBehaviour:
       ignoredOrSkipped: 0
       description: 
       isSuite: 1
+    - id: '[Assembly-CSharp][MoverTests][suite]'
+      name: MoverTests
+      fullName: MoverTests
+      resultStatus: 1
+      duration: 0.3251325
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+    - id: '[Assembly-CSharp][MoverTests.MoverBounceElseSide]'
+      name: MoverBounceElseSide
+      fullName: MoverTests.MoverBounceElseSide
+      resultStatus: 1
+      duration: 0.0668143
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][MoverTests.MoverBounceIfSide]'
+      name: MoverBounceIfSide
+      fullName: MoverTests.MoverBounceIfSide
+      resultStatus: 1
+      duration: 0.0924705
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][MoverTests.MoverBounceSpeedTest]'
+      name: MoverBounceSpeedTest
+      fullName: MoverTests.MoverBounceSpeedTest
+      resultStatus: 1
+      duration: 0.066524
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
     - id: '[Assembly-CSharp][PlayerTests][suite]'
       name: PlayerTests
       fullName: PlayerTests
       resultStatus: 1
-      duration: 0.2185819
+      duration: 0.1984528
       messages: 
       output: 
       stacktrace: 
@@ -332,7 +380,7 @@ MonoBehaviour:
       name: PlayerControllerCountTest
       fullName: PlayerTests.PlayerControllerCountTest
       resultStatus: 1
-      duration: 0.0780048
+      duration: 0.0674331
       messages: 
       output: 
       stacktrace: 
@@ -344,7 +392,7 @@ MonoBehaviour:
       name: PlayerControllerZeroPoints
       fullName: PlayerTests.PlayerControllerZeroPoints
       resultStatus: 1
-      duration: 0.0664051
+      duration: 0.0657349
       messages: 
       output: 
       stacktrace: 
@@ -356,7 +404,7 @@ MonoBehaviour:
       name: TestSuite
       fullName: TestSuite
       resultStatus: 1
-      duration: 0.5136201
+      duration: 0.5142142
       messages: 
       output: 
       stacktrace: 
@@ -368,7 +416,7 @@ MonoBehaviour:
       name: MoverBounceElseSide
       fullName: TestSuite.MoverBounceElseSide
       resultStatus: 1
-      duration: 0.0503343
+      duration: 0.0499281
       messages: 
       output: 
       stacktrace: 
@@ -380,7 +428,7 @@ MonoBehaviour:
       name: MoverBounceIfSide
       fullName: TestSuite.MoverBounceIfSide
       resultStatus: 1
-      duration: 0.0666501
+      duration: 0.0666523
       messages: 
       output: 
       stacktrace: 
@@ -392,7 +440,7 @@ MonoBehaviour:
       name: MoverBounceSpeedTest
       fullName: TestSuite.MoverBounceSpeedTest
       resultStatus: 1
-      duration: 0.0501064
+      duration: 0.049651
       messages: 
       output: 
       stacktrace: 
@@ -404,7 +452,7 @@ MonoBehaviour:
       name: PlayerControllerCountTest
       fullName: TestSuite.PlayerControllerCountTest
       resultStatus: 1
-      duration: 0.0498002
+      duration: 0.0500657
       messages: 
       output: 
       stacktrace: 
@@ -416,7 +464,7 @@ MonoBehaviour:
       name: PlayerControllerZeroPoints
       fullName: TestSuite.PlayerControllerZeroPoints
       resultStatus: 1
-      duration: 0.0498434
+      duration: 0.0498216
       messages: 
       output: 
       stacktrace: 
@@ -428,7 +476,7 @@ MonoBehaviour:
       name: PrefabTest
       fullName: TestSuite.PrefabTest
       resultStatus: 1
-      duration: 0.0497057
+      duration: 0.0497147
       messages: 
       output: 
       stacktrace: 
@@ -436,13 +484,13 @@ MonoBehaviour:
       ignoredOrSkipped: 0
       description: 
       isSuite: 0
-    m_ResultText: Assembly-CSharp.dll (0.776s)
+    m_ResultText: MoverTests (0.325s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: cd5292e3
-      m_LastClickedID: -476949811
-      m_ExpandedIDs: b4337a97d82c99b652d5d2c3cd5292e3b123b4ee3d6d3b14f3c15828ffffff7f
+      m_SelectedIDs: 742fef10
+      m_LastClickedID: 284110708
+      m_ExpandedIDs: b4337a97d82c99b652d5d2c3cd5292e3b123b4ee742fef103d6d3b14f3c15828ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -569,7 +617,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 14b8ffff2cb8ffff28bcffff88f3ffffa0f3ffff24f8ffffa6fbffff00000000
+    m_ExpandedIDs: 3060ffff4860ffffa865ffffce8cffffe68cffff1292ffffd893fffff093ffff4099ffff0e9cffff269cffffc0a0ffff20a5ffff38a5ffffbeaaffffa6fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
