@@ -15,7 +15,6 @@ echo "Running tests for ${UNITYCI_PROJECT_NAME}"
 	-testPlatform playmode \
 	-testResults "$(pwd)/${UNITYCI_PROJECT_NAME}"/test.xml \
 	-testFilter "$(pwd)/${UNITYCI_PROJECT_NAME}/Library/ScriptAssemblies/Assembly-CSharp.dll" \
-	-quit
 
 rc0=$?
 echo "Unit test logs"
