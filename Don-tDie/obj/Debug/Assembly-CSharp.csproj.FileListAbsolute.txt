@@ -38,3 +38,5 @@ C:\Users\Lucio\Documents\GitHub\Don-tDie\Don-tDie\Temp\bin\Debug\UnityEngine.Goo
 C:\Users\Lucio\Documents\GitHub\Don-tDie\Don-tDie\Temp\bin\Debug\UnityEngine.HoloLens.xml
 C:\Users\Lucio\Documents\GitHub\Don-tDie\Don-tDie\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
 C:\Users\Lucio\Documents\GitHub\Don-tDie\Don-tDie\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Lucio\Documents\GitHub\Don-tDie\Don-tDie\Temp\bin\Debug\InputSimulator.dll
+C:\Users\Lucio\Documents\GitHub\Don-tDie\Don-tDie\Temp\bin\Debug\InputSimulator.xml

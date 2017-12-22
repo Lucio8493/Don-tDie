@@ -1,11 +1,9 @@
 #! /bin/sh
 
-# NOTE the command args below make the assumption that your Unity project folder is
-#  a subdirectory of the repo root directory, e.g. for this repo "unity-ci-test" 
-#  the project folder is "UnityProject". If this is not true then adjust the 
-#  -projectPath argument to point to the right location.
+# Nota i comandi che seguono prevedono che la cartella del progetto e' una sottodirectory della directory del repository
+# I comandi servono ad avviare e a fermare l'editor di unity in modalita' batch
 
-## Run the editor unit tests
+# Avvio dei tests presenti nell'editor
 echo "Running tests for ${UNITYCI_PROJECT_NAME}"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
 	-projectPath "$(pwd)/${UNITYCI_PROJECT_NAME}" \
@@ -19,12 +17,13 @@ echo "Running tests for ${UNITYCI_PROJECT_NAME}"
 rc0=$?
 echo "Unit test logs"
 cat "$(pwd)/${UNITYCI_PROJECT_NAME}"/test.xml
-# exit if tests failed
+# Uscita in caso di fallimento dei tests
 if [ $rc0 -ne 0 ]; then { echo "Failed unit tests"; exit $rc0; } fi
 
 
-## Make the builds
-# Recall from install.sh that a separate module was needed for Windows build support
+# Avvio della fase di build
+
+# Avvio del processo di build per la creazione di uno standalone in grado di operare su sistemi Windows
 echo "Attempting build of ${UNITYCI_PROJECT_NAME} for Windows"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
 	-batchmode \
@@ -39,6 +38,8 @@ rc1=$?
 echo "Build logs (Windows)"
 cat $(pwd)/unity.log
 
+
+# Avvio del processo di build per la creazione di uno standalone in grado di operare su sistemi OSX
 echo "Attempting build of ${UNITYCI_PROJECT_NAME} for OSX"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
 	-batchmode \
@@ -53,5 +54,5 @@ rc2=$?
 echo "Build logs (OSX)"
 cat $(pwd)/unity.log
 
-#Remeber to add exit $(($rc1|$rc2))
+# In uscita controlla che i processi siano terminati senza errori
 exit $(($rc1|$rc2))

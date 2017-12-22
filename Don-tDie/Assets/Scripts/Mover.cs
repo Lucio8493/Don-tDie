@@ -33,7 +33,7 @@ public class Mover : MonoBehaviour {
 		return count;
 	}
 
-    // Use this for initialization
+    // Metodo avviatto all'inizializzazione dell'oggetto
     void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		//Viene catturata l'eccezione per consentire di eseguire dei test automatici

@@ -42,7 +42,8 @@ public class PlayerController : MonoBehaviour {
         return transform.position.y;
     }
 
-	// Use this for initialization
+
+	// Metodo avviatto all'inizializzazione dell'oggetto
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		points = 0;
@@ -53,7 +54,8 @@ public class PlayerController : MonoBehaviour {
 		btn.onClick.AddListener (Reset);
     }
 
-    // Update is called once per frame
+    // FixedUpdate e' la funzione chiamata ogni frame che viene solitamente utilizzata per agire sugli oggetti
+	// in particolare quando devono essere spostati e quindi va applicata una forza al loro corpo rigido
     void FixedUpdate () {
 		float moveHorizontal = Input.GetAxis("Horizontal");
 		float moveVertical = Input.GetAxis("Vertical");

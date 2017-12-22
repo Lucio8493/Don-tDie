@@ -20,10 +20,9 @@ public class Shoot : MonoBehaviour {
 		this.nextFire = nextFire;
 		this.ShotPrefab = ShotPrefab;
 	}
+		
 
-	// Use this for initialization
-
-	// Update is called once per frame
+	// Update e' chiamata ad intervalli regolari di tempo, sempre rispettando il principio che viene invocata una volta per frame
 	void Update () {
 		if (Time.time > nextFire) { 
 			nextFire = Time.time + fireRate; 

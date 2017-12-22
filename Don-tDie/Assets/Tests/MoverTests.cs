@@ -3,15 +3,11 @@ using UnityEngine.TestTools;
 using UnityEngine.UI;
 using NUnit.Framework;
 using System.Collections;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 public class MoverTests {
 
 
-    // A UnityTest behaves like a coroutine in PlayMode
-    // and allows you to yield null to skip a frame in EditMode
+
 
     Mover shot;
 
