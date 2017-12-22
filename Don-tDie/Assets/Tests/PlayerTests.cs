@@ -107,8 +107,15 @@ public class PlayerTests {
     }
 
 
-   
-
+    [UnityTest]
+    public IEnumerator PauseGame()// test controllare se il gioco va in pausa quando si preme l'apposito tasto
+    {
+        var shot = new GameObject().AddComponent<Pause>();
+        InputSimulator.SimulateKeyPress(VirtualKeyCode.VK_P); // simula la pressione su tastiera
+        yield return null;       //si invoca il metodo per l'instanziazione del gameobject, viene eseguito start e una volta l'update
+        Debug.Log(Time.timeScale);
+        Assert.AreEqual(Time.timeScale, 0);
+    }
 
 
 
