@@ -64,45 +64,20 @@ public class Mover : MonoBehaviour {
 
         }
 		else if(other.gameObject.CompareTag("Background")){ // in questo if entriamo se un colpo ("shot") collide con uno dei quattro bordi dello schermo
-  
             rb.velocity =new Vector2(0.0f,0.0f);
 			int collider = CheckCollider (other);
-            switch (collider)
+            if (collider == 1 || collider == 3) // se  collider è uno o tre il colpo si è scontrato con il muro di destra o sinistra, in questo caso va invertita la componente x
             {
-                case 1: //in questo caso siamo nel bordo di destra, quello che deve cambiare è la componente x del vettore
-                    {
-                        difference = new Vector3(-1 * difference.x, difference.y, difference.z);
-                        ActualDir = new Ray2D(transform.position, difference);
-                        Bounce();
-                        break;
-                    }
-                case 2: //in questo caso il colpo collide col bordo superiore, quello che deve cambiare è la componente y del vettore
-                    {
-                        difference = new Vector3(difference.x, -1*difference.y, difference.z);
-                        ActualDir = new Ray2D(transform.position, difference);
-                        Bounce();
-                        break;
-                    }
-                case 3: //in questo caso il colpo collide col bordo di sinistra, quello che deve cambiare è la componente x del vettore
-                    {
-                        difference = new Vector3(-1 * difference.x, difference.y, difference.z);
-                        ActualDir = new Ray2D(transform.position, difference);
-                        Bounce();
-                        break;
-                    }
-                case 4: //in questo caso il colpo collide col bordo inferiore, quello che deve cambiare è la componente y del vettore
-                    {
-                        difference = new Vector3(difference.x, -1 * difference.y, difference.z);
-                        ActualDir = new Ray2D(transform.position, difference);
-                        Bounce();
-                        break;
-                    }
-                default:
-                    {
+                difference = new Vector3(-1 * difference.x, difference.y, difference.z);
+            } else // se invece collider è due oppure quattro il colpo si è scontrato con un muro superiore o inveriore, in questo caso va cambiata la componente y 
+            {
+                difference = new Vector3(difference.x, -1 * difference.y, difference.z);
 
-                        break;
-                    }
             }
+
+            ActualDir = new Ray2D(transform.position, difference);
+            Bounce();
+            
         }
     }
 
