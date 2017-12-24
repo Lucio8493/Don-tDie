@@ -14,6 +14,19 @@ public class Mover : MonoBehaviour {
     private Vector3 difference; // il vettore della direzione del colpo, mi servirà poi per andare a calcolare la direzione dopo il rimbalzo
 
 
+
+    public Vector3 GetDifference() // get che serve per il testing, restitisce il vettore direzione
+    {
+        return difference;
+    }
+
+    public Ray2D GetActualDir()  // get che serve per il testing
+    {
+        return ActualDir;
+    }
+
+
+
 	//Metodi per il settaggio dello stato  nellla fase di testing
 	public void Construct ( float speed, int bounces, Ray2D ActualDir, int count, Vector3 difference){
 		this.speed = speed;

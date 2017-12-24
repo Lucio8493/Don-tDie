@@ -79,7 +79,38 @@ public class MoverTests {
         Assert.AreEqual(3, shot.GetCount());
     }
 
-    
+
+
+    [UnityTest]
+    public IEnumerator CollisionRightBackground() // serve a vedere se il vettore viene cambiato regolarmente una volta avvenuta la collisione
+    {
+        //caso in cui collidiamo a destra, quello che deve cambiare è la x
+        var background = new GameObject().AddComponent<Pause>(); //creo un oggetto che rappresenta il background
+        background.tag = "Background";
+        Rigidbody2D r = background.gameObject.AddComponent<Rigidbody2D>();
+        var collider = r.gameObject.AddComponent<BoxCollider2D>(); // gli do un collider che passerò poi a OnTriggeredEnter2D
+        background.GetComponent<BoxCollider2D>().offset = new Vector2(1, 0); // vado a definire l'offset che serve a capire in quale bordo è avvenuta la collisione (per maggiori informazioni vedere CheckCollider in Mover.cs)
+        yield return null;
+        var oldX = shot.GetActualDir().direction.x; // ottengo la vecchia x del vettore, la nuova dovrà essere la vecchia moltiplicato -1
+        shot.SendMessage("OnTriggerEnter2D", collider);
+        Assert.AreEqual(oldX, shot.GetActualDir().direction.x * -1);
+    }
+
+    [UnityTest]
+    public IEnumerator CollisionUpBackground() // serve a vedere se il vettore viene cambiato regolarmente una volta avvenuta la collisione
+    {
+        //caso in cui collidiamo sopra, quello che deve cambiare è la y
+        var background = new GameObject().AddComponent<Pause>(); //creo un oggetto che rappresenta il background
+        background.tag = "Background";
+        Rigidbody2D r = background.gameObject.AddComponent<Rigidbody2D>();
+        var collider = r.gameObject.AddComponent<BoxCollider2D>(); // gli do un collider che passerò poi a OnTriggeredEnter2D
+        background.GetComponent<BoxCollider2D>().offset = new Vector2(0, 1); // vado a definire l'offset che serve a capire in quale bordo è avvenuta la collisione (per maggiori informazioni vedere CheckCollider in Mover.cs)
+        yield return null;
+        var oldY = shot.GetActualDir().direction.y; // ottengo la vecchia x del vettore, la nuova dovrà essere la vecchia moltiplicato -1
+        shot.SendMessage("OnTriggerEnter2D", collider);
+        Assert.AreEqual(oldY, shot.GetActualDir().direction.y * -1);
+    }
+
 
 
 

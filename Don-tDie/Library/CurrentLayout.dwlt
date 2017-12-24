@@ -15,12 +15,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 8
     y: 51
-    width: 1520
+    width: 1519
     height: 767
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -41,7 +41,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1520
+    width: 1519
     height: 767
   m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -61,7 +61,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1520
+    width: 1519
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -82,7 +82,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 747
-    width: 1520
+    width: 1519
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -104,12 +104,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1520
+    width: 1519
     height: 717
-  m_MinSize: {x: 506, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 504, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 30
+  controlID: 49
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -128,12 +128,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1216
+    width: 1215
     height: 717
   m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 31
+  controlID: 50
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -152,12 +152,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1216
+    width: 1215
     height: 434
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 32
+  controlID: 51
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -199,7 +199,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 300
     y: 0
-    width: 916
+    width: 915
     height: 434
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
@@ -226,7 +226,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 434
-    width: 1216
+    width: 1215
     height: 283
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1216
+    x: 1215
     y: 0
     width: 304
     height: 717
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1226
+    x: 1225
     y: 100
     width: 302
     height: 696
@@ -296,7 +296,7 @@ MonoBehaviour:
       name: Don-tDie
       fullName: Don-tDie
       resultStatus: 1
-      duration: 1.3197458
+      duration: 1.514507
       messages: 
       output: 
       stacktrace: 
@@ -308,7 +308,7 @@ MonoBehaviour:
       name: Assembly-CSharp.dll
       fullName: D:/StRepositories/DD/Don-tDie/Library/ScriptAssemblies/Assembly-CSharp.dll
       resultStatus: 1
-      duration: 1.2722199
+      duration: 1.4704909
       messages: 
       output: 
       stacktrace: 
@@ -320,7 +320,7 @@ MonoBehaviour:
       name: MoverTests
       fullName: MoverTests
       resultStatus: 1
-      duration: 0.3261504
+      duration: 0.5242904
       messages: 
       output: 
       stacktrace: 
@@ -328,11 +328,35 @@ MonoBehaviour:
       ignoredOrSkipped: 0
       description: 
       isSuite: 1
+    - id: '[Assembly-CSharp][MoverTests.CollisionRightBackground]'
+      name: CollisionRightBackground
+      fullName: MoverTests.CollisionRightBackground
+      resultStatus: 1
+      duration: 0.0670662
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][MoverTests.CollisionUpBackground]'
+      name: CollisionUpBackground
+      fullName: MoverTests.CollisionUpBackground
+      resultStatus: 1
+      duration: 0.0664055
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
     - id: '[Assembly-CSharp][MoverTests.MoverBounceElseSide]'
       name: MoverBounceElseSide
       fullName: MoverTests.MoverBounceElseSide
       resultStatus: 1
-      duration: 0.0670312
+      duration: 0.0666398
       messages: 
       output: 
       stacktrace: 
@@ -344,7 +368,7 @@ MonoBehaviour:
       name: MoverBounceIfSide
       fullName: MoverTests.MoverBounceIfSide
       resultStatus: 1
-      duration: 0.0925056
+      duration: 0.0923324
       messages: 
       output: 
       stacktrace: 
@@ -356,7 +380,7 @@ MonoBehaviour:
       name: MoverBounceSpeedTest
       fullName: MoverTests.MoverBounceSpeedTest
       resultStatus: 1
-      duration: 0.0665851
+      duration: 0.06697
       messages: 
       output: 
       stacktrace: 
@@ -368,7 +392,7 @@ MonoBehaviour:
       name: PlayerTests
       fullName: PlayerTests
       resultStatus: 1
-      duration: 0.8947602
+      duration: 0.8946058
       messages: 
       output: 
       stacktrace: 
@@ -380,7 +404,7 @@ MonoBehaviour:
       name: PauseGame
       fullName: PlayerTests.PauseGame
       resultStatus: 1
-      duration: 0.066249
+      duration: 0.0666681
       messages: 
       output: "0\r\n"
       stacktrace: 
@@ -392,7 +416,7 @@ MonoBehaviour:
       name: PlayerControllerCountTest
       fullName: PlayerTests.PlayerControllerCountTest
       resultStatus: 1
-      duration: 0.065581
+      duration: 0.0660724
       messages: 
       output: 
       stacktrace: 
@@ -404,7 +428,7 @@ MonoBehaviour:
       name: PlayerControllerInitialPositionX
       fullName: PlayerTests.PlayerControllerInitialPositionX
       resultStatus: 1
-      duration: 0.0658346
+      duration: 0.06692
       messages: 
       output: 
       stacktrace: 
@@ -416,7 +440,7 @@ MonoBehaviour:
       name: PlayerControllerInitialPositionY
       fullName: PlayerTests.PlayerControllerInitialPositionY
       resultStatus: 1
-      duration: 0.0662901
+      duration: 0.0658214
       messages: 
       output: 
       stacktrace: 
@@ -428,7 +452,7 @@ MonoBehaviour:
       name: PlayerControllerMoveDown
       fullName: PlayerTests.PlayerControllerMoveDown
       resultStatus: 1
-      duration: 0.0659971
+      duration: 0.0662143
       messages: 
       output: 
       stacktrace: 
@@ -440,7 +464,7 @@ MonoBehaviour:
       name: PlayerControllerMoveLeft
       fullName: PlayerTests.PlayerControllerMoveLeft
       resultStatus: 1
-      duration: 0.066042
+      duration: 0.0660292
       messages: 
       output: 
       stacktrace: 
@@ -452,7 +476,7 @@ MonoBehaviour:
       name: PlayerControllerMoveRight
       fullName: PlayerTests.PlayerControllerMoveRight
       resultStatus: 1
-      duration: 0.0663362
+      duration: 0.0650926
       messages: 
       output: 
       stacktrace: 
@@ -464,7 +488,7 @@ MonoBehaviour:
       name: PlayerControllerMoveUp
       fullName: PlayerTests.PlayerControllerMoveUp
       resultStatus: 1
-      duration: 0.0662092
+      duration: 0.066175
       messages: 
       output: 
       stacktrace: 
@@ -476,7 +500,7 @@ MonoBehaviour:
       name: PlayerControllerZeroPoints
       fullName: PlayerTests.PlayerControllerZeroPoints
       resultStatus: 1
-      duration: 0.0651525
+      duration: 0.0668563
       messages: 
       output: 
       stacktrace: 
@@ -484,16 +508,12 @@ MonoBehaviour:
       ignoredOrSkipped: 0
       description: 
       isSuite: 0
-    m_ResultText: 'PauseGame (0.066s)
-
-      ---
-
-      0'
+    m_ResultText: CollisionUpBackground (0.066s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: f42ab4e7
-      m_LastClickedID: -407622924
+      m_SelectedIDs: ffa0acc9
+      m_LastClickedID: -911433473
       m_ExpandedIDs: b4337a97d82c99b652d5d2c3cd5292e3b123b4ee742fef103d6d3b14f3c15828ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -619,9 +639,9 @@ MonoBehaviour:
     height: 413
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7e050000
+    m_SelectedIDs: 2c070000
     m_LastClickedID: 0
-    m_ExpandedIDs: ea86ffff0287ffff788effffc8faffff000000005a280000
+    m_ExpandedIDs: cca9feffaeaefeffc6aefeff00b7feffe0b7fefff8b7feff0cc0feffe8c5feff00c6feff30cefeffd4cffeffeccffeff4ed3feff4ad5feff62d5feffe6d7feff74dcfeff8cdcfeff44e4feff6ae7feff82e7feff32eafeff72edfeff8aedfeff7cf0feffecf5feff04f6feffe4f8feffcafdfeffe2fdfeffea00ffffd005ffffe805fffffa08ffff9a10ffff9a14ffffb214ffff5417ffff781cffff901cffffd21fffff5c22ffff7422ffff3e25ffff5627ffff6e27ffff842affff662fffff7e2fffff0632ffffbc32ffff3636ffff4e36ffff0239ffffc639ffffde39ffff9e3fffff4c40ffff4e49ffff5a4dffff724dffff9650ffffc46dffff7c71ffffb278ffffca78ffffb27bffff7c7fffff947fffff5882ffff0286ffff1a86ffff1e89fffff08affff088bffffbc8dffff0090ffff1890ffff2493ffff4a97ffff6297ffff4c9affff149bffff2c9bffff7ca1ffff34a2ffff84a6ffff9ca6ffff50a9ffff86acffff9eacffffb6afffff2ab4ffff42b4ffff42bbffffe8bdffff00beffffe8c5ffff84c8ffff9cc8ffff56cfffff82d5ffff9ad5ffff78ddffffa6fbffff00000000442e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -668,7 +688,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 310
     y: 100
-    width: 912
+    width: 911
     height: 413
   m_SceneLighting: 0
   lastFramingTime: 1644.9734474482798
@@ -819,7 +839,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 8
     y: 534
-    width: 1214
+    width: 1213
     height: 262
   m_SearchFilter:
     m_NameFilter: 
@@ -833,33 +853,33 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Tests
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Tests
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\StRepositories\DD\Don-tDie
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2c280000
-    m_LastClickedID: 10284
-    m_ExpandedIDs: 00000000b8270000f8270000fa2700001029000000ca9a3bffffff7f
+    m_SelectedIDs: 72270000
+    m_LastClickedID: 10098
+    m_ExpandedIDs: 000000003027000070270000722700009228000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Scenes
-      m_OriginalName: Scenes
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 10224
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -873,7 +893,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b8270000f8270000fa27000010290000
+    m_ExpandedIDs: 0000000030270000702700007227000092280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -980,7 +1000,7 @@ MonoBehaviour:
     y: 100
     width: 302
     height: 696
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 350.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 163
