@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -296,7 +296,7 @@ MonoBehaviour:
       name: Don-tDie
       fullName: Don-tDie
       resultStatus: 1
-      duration: 1.514507
+      duration: 1.7159038
       messages: 
       output: 
       stacktrace: 
@@ -308,7 +308,7 @@ MonoBehaviour:
       name: Assembly-CSharp.dll
       fullName: D:/StRepositories/DD/Don-tDie/Library/ScriptAssemblies/Assembly-CSharp.dll
       resultStatus: 1
-      duration: 1.4704909
+      duration: 1.6697216
       messages: 
       output: 
       stacktrace: 
@@ -320,7 +320,7 @@ MonoBehaviour:
       name: MoverTests
       fullName: MoverTests
       resultStatus: 1
-      duration: 0.5242904
+      duration: 0.723673
       messages: 
       output: 
       stacktrace: 
@@ -328,11 +328,11 @@ MonoBehaviour:
       ignoredOrSkipped: 0
       description: 
       isSuite: 1
-    - id: '[Assembly-CSharp][MoverTests.CollisionRightBackground]'
-      name: CollisionRightBackground
-      fullName: MoverTests.CollisionRightBackground
+    - id: '[Assembly-CSharp][MoverTests.CollisionRightBackgroundX]'
+      name: CollisionRightBackgroundX
+      fullName: MoverTests.CollisionRightBackgroundX
       resultStatus: 1
-      duration: 0.0670662
+      duration: 0.067171
       messages: 
       output: 
       stacktrace: 
@@ -340,11 +340,35 @@ MonoBehaviour:
       ignoredOrSkipped: 0
       description: 
       isSuite: 0
-    - id: '[Assembly-CSharp][MoverTests.CollisionUpBackground]'
-      name: CollisionUpBackground
-      fullName: MoverTests.CollisionUpBackground
+    - id: '[Assembly-CSharp][MoverTests.CollisionRightBackgroundY]'
+      name: CollisionRightBackgroundY
+      fullName: MoverTests.CollisionRightBackgroundY
       resultStatus: 1
-      duration: 0.0664055
+      duration: 0.0663601
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][MoverTests.CollisionUpBackgroundX]'
+      name: CollisionUpBackgroundX
+      fullName: MoverTests.CollisionUpBackgroundX
+      resultStatus: 1
+      duration: 0.0661284
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][MoverTests.CollisionUpBackgroundY]'
+      name: CollisionUpBackgroundY
+      fullName: MoverTests.CollisionUpBackgroundY
+      resultStatus: 1
+      duration: 0.0661669
       messages: 
       output: 
       stacktrace: 
@@ -356,7 +380,7 @@ MonoBehaviour:
       name: MoverBounceElseSide
       fullName: MoverTests.MoverBounceElseSide
       resultStatus: 1
-      duration: 0.0666398
+      duration: 0.0663293
       messages: 
       output: 
       stacktrace: 
@@ -368,7 +392,7 @@ MonoBehaviour:
       name: MoverBounceIfSide
       fullName: MoverTests.MoverBounceIfSide
       resultStatus: 1
-      duration: 0.0923324
+      duration: 0.0928525
       messages: 
       output: 
       stacktrace: 
@@ -380,7 +404,7 @@ MonoBehaviour:
       name: MoverBounceSpeedTest
       fullName: MoverTests.MoverBounceSpeedTest
       resultStatus: 1
-      duration: 0.06697
+      duration: 0.066107
       messages: 
       output: 
       stacktrace: 
@@ -392,7 +416,7 @@ MonoBehaviour:
       name: PlayerTests
       fullName: PlayerTests
       resultStatus: 1
-      duration: 0.8946058
+      duration: 0.895364
       messages: 
       output: 
       stacktrace: 
@@ -404,7 +428,7 @@ MonoBehaviour:
       name: PauseGame
       fullName: PlayerTests.PauseGame
       resultStatus: 1
-      duration: 0.0666681
+      duration: 0.0664821
       messages: 
       output: "0\r\n"
       stacktrace: 
@@ -416,7 +440,7 @@ MonoBehaviour:
       name: PlayerControllerCountTest
       fullName: PlayerTests.PlayerControllerCountTest
       resultStatus: 1
-      duration: 0.0660724
+      duration: 0.0666835
       messages: 
       output: 
       stacktrace: 
@@ -428,7 +452,7 @@ MonoBehaviour:
       name: PlayerControllerInitialPositionX
       fullName: PlayerTests.PlayerControllerInitialPositionX
       resultStatus: 1
-      duration: 0.06692
+      duration: 0.066045
       messages: 
       output: 
       stacktrace: 
@@ -440,7 +464,7 @@ MonoBehaviour:
       name: PlayerControllerInitialPositionY
       fullName: PlayerTests.PlayerControllerInitialPositionY
       resultStatus: 1
-      duration: 0.0658214
+      duration: 0.0662682
       messages: 
       output: 
       stacktrace: 
@@ -452,7 +476,7 @@ MonoBehaviour:
       name: PlayerControllerMoveDown
       fullName: PlayerTests.PlayerControllerMoveDown
       resultStatus: 1
-      duration: 0.0662143
+      duration: 0.0656854
       messages: 
       output: 
       stacktrace: 
@@ -464,7 +488,7 @@ MonoBehaviour:
       name: PlayerControllerMoveLeft
       fullName: PlayerTests.PlayerControllerMoveLeft
       resultStatus: 1
-      duration: 0.0660292
+      duration: 0.0660574
       messages: 
       output: 
       stacktrace: 
@@ -476,7 +500,7 @@ MonoBehaviour:
       name: PlayerControllerMoveRight
       fullName: PlayerTests.PlayerControllerMoveRight
       resultStatus: 1
-      duration: 0.0650926
+      duration: 0.0670594
       messages: 
       output: 
       stacktrace: 
@@ -488,7 +512,7 @@ MonoBehaviour:
       name: PlayerControllerMoveUp
       fullName: PlayerTests.PlayerControllerMoveUp
       resultStatus: 1
-      duration: 0.066175
+      duration: 0.0660053
       messages: 
       output: 
       stacktrace: 
@@ -500,7 +524,7 @@ MonoBehaviour:
       name: PlayerControllerZeroPoints
       fullName: PlayerTests.PlayerControllerZeroPoints
       resultStatus: 1
-      duration: 0.0668563
+      duration: 0.0660569
       messages: 
       output: 
       stacktrace: 
@@ -508,12 +532,12 @@ MonoBehaviour:
       ignoredOrSkipped: 0
       description: 
       isSuite: 0
-    m_ResultText: CollisionUpBackground (0.066s)
+    m_ResultText: MoverBounceIfSide (0.093s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ffa0acc9
-      m_LastClickedID: -911433473
+      m_SelectedIDs: 1df8786c
+      m_LastClickedID: 1819867165
       m_ExpandedIDs: b4337a97d82c99b652d5d2c3cd5292e3b123b4ee742fef103d6d3b14f3c15828ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -639,9 +663,9 @@ MonoBehaviour:
     height: 413
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2c070000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: cca9feffaeaefeffc6aefeff00b7feffe0b7fefff8b7feff0cc0feffe8c5feff00c6feff30cefeffd4cffeffeccffeff4ed3feff4ad5feff62d5feffe6d7feff74dcfeff8cdcfeff44e4feff6ae7feff82e7feff32eafeff72edfeff8aedfeff7cf0feffecf5feff04f6feffe4f8feffcafdfeffe2fdfeffea00ffffd005ffffe805fffffa08ffff9a10ffff9a14ffffb214ffff5417ffff781cffff901cffffd21fffff5c22ffff7422ffff3e25ffff5627ffff6e27ffff842affff662fffff7e2fffff0632ffffbc32ffff3636ffff4e36ffff0239ffffc639ffffde39ffff9e3fffff4c40ffff4e49ffff5a4dffff724dffff9650ffffc46dffff7c71ffffb278ffffca78ffffb27bffff7c7fffff947fffff5882ffff0286ffff1a86ffff1e89fffff08affff088bffffbc8dffff0090ffff1890ffff2493ffff4a97ffff6297ffff4c9affff149bffff2c9bffff7ca1ffff34a2ffff84a6ffff9ca6ffff50a9ffff86acffff9eacffffb6afffff2ab4ffff42b4ffff42bbffffe8bdffff00beffffe8c5ffff84c8ffff9cc8ffff56cfffff82d5ffff9ad5ffff78ddffffa6fbffff00000000442e0000
+    m_ExpandedIDs: 7e83ffff9683ffff6c8bffffa8acffffb4afffffccafffff5cb7ffff72bbffff8abbffffe4c3ffffc8cdffff22d0ffff3ad0ffffa2d8ffffd2efffffeaefffff02f7ffff68fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -763,7 +787,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 310
     y: 100
-    width: 912
+    width: 911
     height: 413
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -793,25 +817,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 912
+      width: 911
       height: 396
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 456, y: 198}
+    m_Translation: {x: 455.5, y: 198}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -456
+      x: -455.5
       y: -198
-      width: 912
+      width: 911
       height: 396
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 912, y: 413}
+  m_LastWindowPixelSize: {x: 911, y: 413}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -853,19 +877,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Tests
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Tests
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\StRepositories\DD\Don-tDie
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 72270000
-    m_LastClickedID: 10098
-    m_ExpandedIDs: 000000003027000070270000722700009228000000ca9a3bffffff7f
+    m_SelectedIDs: e6270000
+    m_LastClickedID: 10214
+    m_ExpandedIDs: 00000000ae270000f4270000f62700001029000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -893,7 +917,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000030270000702700007227000092280000
+    m_ExpandedIDs: 00000000ae270000f4270000f627000010290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -972,7 +996,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 8
     y: 534
-    width: 1214
+    width: 1213
     height: 262
 --- !u!114 &19
 MonoBehaviour:
