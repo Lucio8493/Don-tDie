@@ -51,7 +51,10 @@ public class Mover : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 		//Viene catturata l'eccezione per consentire di eseguire dei test automatici
 		try{
-			difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; 
+			//difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; 
+			// in Sistemi difference lo crediamo con numeri casuali invece di darli in base alla direzione del mouse 
+			difference =  new Vector3 (Random.Range(-1.0f, 1.0f),Random.Range(-1.0f, 1.0f),0); 
+			
 		}
 		catch(System.NullReferenceException e){
 			difference = new Vector3 (4, 4, 0);
@@ -68,6 +71,7 @@ public class Mover : MonoBehaviour {
 			other.gameObject.SendMessage ("GameOver");
 
         }
+		/* Per sistemi non abbiamo bisogno del rimbalzo tra i colpi, quindi lo commento
 		else if(other.gameObject.CompareTag ("Shot")){ // in questo if entriamo se un colpo ("shot") collide con un altro colpo
 			rb.velocity =new Vector2(0.0f,0.0f);
             difference = new Vector3(-1 * difference.x, -1*difference.y, difference.z); // quando un colpo collide con un un altro va nella direzione opposta a quella in cui andava prima
@@ -76,6 +80,7 @@ public class Mover : MonoBehaviour {
 
 
         }
+		*/
 		else if(other.gameObject.CompareTag("Background")){ // in questo if entriamo se un colpo ("shot") collide con uno dei quattro bordi dello schermo
             rb.velocity =new Vector2(0.0f,0.0f);
 			int collider = CheckCollider (other);
@@ -110,10 +115,12 @@ public class Mover : MonoBehaviour {
 	}
 
 	void Bounce(){
+		/* per sistemi l'aumento di velocità non ci serve, quindi lo commento
 		speed = 1.2f * speed;
+		*/
 		rb.AddForce (ActualDir.direction * speed);
 		if (count >= bounces) {   // se count è uguale a "bounces" allora il colpo ha fatto abbastanza rimbalzi e può essere eliminato. (per sapere di più su bounces vedere sopra)
-			Destroy (this.gameObject);
+			//Destroy (this.gameObject); in Sistemi la distruzione dello shoot non ci serve, quindi viene eliminata
 			GameObject pl = GameObject.FindGameObjectWithTag ("Player");
 			pl.SendMessage ("AddPoint");
 		}

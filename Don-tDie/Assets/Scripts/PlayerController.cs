@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour {
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
 		rb.velocity = movement*speed;
 
+		/* Per Sistemi questa parte di codice non serve, è quella che gestisce la rotazione della navicella in base a dove si punta col mouse
 		Vector3 difference;
 		try{
 			difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; 
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour {
 		difference.Normalize();
 		float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.Euler(0f, 0f, rotation_z-90f);
+		*/
 	}
 
 	void AddPoint(){

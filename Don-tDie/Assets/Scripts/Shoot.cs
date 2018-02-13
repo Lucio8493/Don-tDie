@@ -51,7 +51,9 @@ public class Shoot : MonoBehaviour {
                 #endif
                 shot.transform.position = transform.position;
             }
-        } else // altrimenti continua il gioco normalmente, ovvero sparando in base ai secondi
+			
+        } /* Dato che in sistemi non abbiamo bisogno del codice che spara ogni x secondi, lo commento
+		else // altrimenti continua il gioco normalmente, ovvero sparando in base ai secondi
         {
             if (Time.time > nextFire) { 
 			    nextFire = Time.time + fireRate; 
@@ -62,7 +64,8 @@ public class Shoot : MonoBehaviour {
 			    #endif
 			    shot.transform.position=transform.position;
 		    }
-        }
+			
+        } */
 
         
 
