@@ -5,7 +5,7 @@ using UnityEngine;
 // nb, colpo e shot vengono usati come sinonimo e si riferiscono al prefab Shot
 public class Mover : MonoBehaviour {
 
-	public float speed; // la velocità iniziale del colpo, se si vuole modificare il valore lo si trova in /Assets/Prefabs/Shot
+	public float force; // valore della forza applicata al proiettile per spostarla
     public int bounces; // i rimbalzi che il colpo deve fare prima di essere eliminato e scomparire dal gioco, se si vuole modificare il valore lo si trova in /Assets/Prefabs/Shot
 
 	private Rigidbody2D rb;
@@ -28,16 +28,16 @@ public class Mover : MonoBehaviour {
 
 
 	//Metodi per il settaggio dello stato  nellla fase di testing
-	public void Construct ( float speed, int bounces, Ray2D ActualDir, int count, Vector3 difference){
-		this.speed = speed;
+	public void Construct ( float force, int bounces, Ray2D ActualDir, int count, Vector3 difference){
+		this.force = force;
 		this.bounces = bounces;
 		this.ActualDir = ActualDir;
 		this.count = count;
 		this.difference = difference;
 	}
 
-	public void Construct ( float speed, int bounces, int count){
-		this.speed = speed;
+	public void Construct ( float force, int bounces, int count){
+		this.force = force;
 		this.bounces = bounces;
 		this.count = count;
 	}
@@ -62,7 +62,7 @@ public class Mover : MonoBehaviour {
 
 		difference.Normalize();
 		ActualDir = new Ray2D (transform.position, difference);
-		rb.AddForce (ActualDir.direction * speed);
+		rb.AddForce (ActualDir.direction * force);
 
 		count = 0;
 	}
@@ -119,7 +119,7 @@ public class Mover : MonoBehaviour {
 		/* per sistemi l'aumento di velocità non ci serve, quindi lo commento
 		speed = 1.2f * speed;
 		*/
-		rb.AddForce (ActualDir.direction * speed);
+		rb.AddForce (ActualDir.direction * force);
 		if (count >= bounces) {   // se count è uguale a "bounces" allora il colpo ha fatto abbastanza rimbalzi e può essere eliminato. (per sapere di più su bounces vedere sopra)
 			//Destroy (this.gameObject); in Sistemi la distruzione dello shoot non ci serve, quindi viene eliminata
 			GameObject pl = GameObject.FindGameObjectWithTag ("Player");

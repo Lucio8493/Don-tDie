@@ -38,7 +38,7 @@ public class MoverTests {
         //invocazione del metodo bounce su shot
         shot.SendMessage("Bounce");
         //verifica dell'asserzione
-        Assert.AreNotEqual(100, shot.speed);
+        Assert.AreNotEqual(100, shot.force);
 
     }
 

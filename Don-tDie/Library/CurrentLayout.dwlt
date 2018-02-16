@@ -15,12 +15,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 8
     y: 51
-    width: 1519
+    width: 1520
     height: 767
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -41,7 +41,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1519
+    width: 1520
     height: 767
   m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -61,7 +61,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1519
+    width: 1520
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -82,7 +82,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 747
-    width: 1519
+    width: 1520
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -104,12 +104,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1519
+    width: 1520
     height: 717
-  m_MinSize: {x: 681, y: 492}
+  m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 114
+  controlID: 49
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -128,9 +128,9 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1215
+    width: 1216
     height: 717
-  m_MinSize: {x: 404, y: 492}
+  m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 50
@@ -152,10 +152,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1215
+    width: 1216
     height: 434
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
   controlID: 51
 --- !u!114 &8
@@ -199,7 +199,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 300
     y: 0
-    width: 915
+    width: 916
     height: 434
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
@@ -226,7 +226,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 434
-    width: 1215
+    width: 1216
     height: 283
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
@@ -250,12 +250,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1215
+    x: 1216
     y: 0
     width: 304
     height: 717
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -287,7 +287,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 310
     y: 100
-    width: 911
+    width: 912
     height: 413
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -317,25 +317,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 911
+      width: 912
       height: 396
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 455.5, y: 198}
+    m_Translation: {x: 456, y: 198}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -455.5
+      x: -456
       y: -198
-      width: 911
+      width: 912
       height: 396
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 911, y: 413}
+  m_LastWindowPixelSize: {x: 912, y: 413}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -367,9 +367,9 @@ MonoBehaviour:
     height: 413
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d0270000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: a6fbffff00000000
+    m_ExpandedIDs: cefaffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -517,7 +517,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 8
     y: 534
-    width: 1213
+    width: 1214
     height: 262
   m_SearchFilter:
     m_NameFilter: 
@@ -531,33 +531,33 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Resources/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Resources/Prefabs
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\StRepositories\DD\Don-tDie
+  m_LastProjectPath: C:\Users\Lucio\Documents\GitHub\Don-tDie\Don-tDie
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 56270000
-    m_LastClickedID: 10070
-    m_ExpandedIDs: 0000000030270000782700007a270000a628000000ca9a3bffffff7f
+    m_SelectedIDs: 02280000
+    m_LastClickedID: 10242
+    m_ExpandedIDs: 00000000dc27000020280000222800003c29000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Resources
-      m_OriginalName: Resources
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 10104
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -571,7 +571,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000030270000782700007a270000a6280000
+    m_ExpandedIDs: 00000000dc27000020280000222800003c290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -674,11 +674,11 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1225
+    x: 1226
     y: 100
     width: 302
     height: 696
-  m_ScrollPosition: {x: 0, y: 455.95508}
+  m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 163
@@ -726,11 +726,11 @@ MonoBehaviour:
       ignoredOrSkipped: 0
       description: 
       isSuite: 1
-    - id: '[D:/StRepositories/DD/Don-tDie/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
+    - id: '[C:/Users/Lucio/Documents/GitHub/Don-tDie/Don-tDie/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
       name: Assembly-CSharp.dll
-      fullName: D:/StRepositories/DD/Don-tDie/Library/ScriptAssemblies/Assembly-CSharp.dll
-      resultStatus: 1
-      duration: 1.6697216
+      fullName: C:/Users/Lucio/Documents/GitHub/Don-tDie/Don-tDie/Library/ScriptAssemblies/Assembly-CSharp.dll
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
