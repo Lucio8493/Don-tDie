@@ -63,6 +63,7 @@ public class Mover : MonoBehaviour {
 		difference.Normalize();
 		ActualDir = new Ray2D (transform.position, difference);
 		rb.AddForce (ActualDir.direction * speed);
+
 		count = 0;
 	}
 
