@@ -62,9 +62,18 @@ public class Mover : MonoBehaviour {
 			difference = new Vector3 (4, 4, 0);
 		}
 
+		/*
+		 Vector3 a = new Vector3 (2, 2, 0);
+		a.Normalize();
+
+		print ( a.magnitude);*/
+
+
+
 		difference.Normalize();
-		ActualDir = new Ray2D (transform.position, difference);
-		rb.AddForce (ActualDir.direction * speed);
+	//	ActualDir = new Ray2D (transform.position, difference);
+	//	rb.AddForce (ActualDir.direction * speed);
+		rb.velocity = difference * speed;
 
 		count = 0;
 	}
@@ -106,7 +115,10 @@ public class Mover : MonoBehaviour {
 
             }
 
-            ActualDir = new Ray2D(transform.position, difference);
+           // ActualDir = new Ray2D(transform.position, difference);
+
+			difference.Normalize();
+
             Bounce();
             
         }
@@ -131,7 +143,10 @@ public class Mover : MonoBehaviour {
 		/* per sistemi l'aumento di velocità non ci serve, quindi lo commento
 		speed = 1.2f * speed;
 		*/
-		rb.AddForce (ActualDir.direction * speed);
+		//rb.AddForce (ActualDir.direction * speed);
+
+		rb.velocity = difference * speed;
+
 		if (count >= bounces) {   // se count è uguale a "bounces" allora il colpo ha fatto abbastanza rimbalzi e può essere eliminato. (per sapere di più su bounces vedere sopra)
 			//Destroy (this.gameObject); in Sistemi la distruzione dello shoot non ci serve, quindi viene eliminata
 			GameObject pl = GameObject.FindGameObjectWithTag ("Player");
