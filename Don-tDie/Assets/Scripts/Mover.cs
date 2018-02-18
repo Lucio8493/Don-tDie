@@ -15,6 +15,8 @@ public class Mover : MonoBehaviour {
 
 
 
+
+
     public Vector3 GetDifference() // get che serve per il testing, restitisce il vettore direzione
     {
         return difference;
@@ -66,6 +68,16 @@ public class Mover : MonoBehaviour {
 
 		count = 0;
 	}
+
+
+	/************  test     */
+	void FixedUpdate () {
+
+	}
+
+
+
+
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.CompareTag ("Player")) { // in questo if entriamo se il colpo ("shot") collide con il giocatore (la navicella)
