@@ -78,7 +78,9 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void AddPoint(){
-		points++;
+		//points++;
+		System.Threading.Interlocked.Increment(ref points); //incremento atomico, per evitare problemi di concorrenza
+		//Interlocked.Add(1,1);
 		pointsLabel.text = "Punti: " + points.ToString();
 	}
 
