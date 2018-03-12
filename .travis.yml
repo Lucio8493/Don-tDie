@@ -7,7 +7,7 @@ os: osx
 # Avviare la build ad ogni push solo sul branch principale 
 branches:
   only:
-  - master
+  - Sistemi_distreti
 
 # Verra' notificata via mail il fallimento di una build
 notifications:
