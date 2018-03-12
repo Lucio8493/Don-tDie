@@ -22,7 +22,7 @@ public class MoverTests {
         Ray2D ray = new Ray2D();
         Vector3 vec = new Vector3();
         //Settaggio dello stato attraverso il metodo construct
-        shot.Construct(100, 4, ray, 2, vec);
+        shot.Construct(100, 4, 2, vec);
 
     }
 
@@ -91,9 +91,9 @@ public class MoverTests {
         var collider = r.gameObject.AddComponent<BoxCollider2D>(); // gli do un collider che passerò poi a OnTriggeredEnter2D
         background.GetComponent<BoxCollider2D>().offset = new Vector2(1, 0); // vado a definire l'offset che serve a capire in quale bordo è avvenuta la collisione (per maggiori informazioni vedere CheckCollider in Mover.cs)
         yield return null;
-        var oldX = shot.GetActualDir().direction.x; // ottengo la vecchia x del vettore, la nuova dovrà essere la vecchia moltiplicato -1
+		var oldX = shot.GetDifference().x; // ottengo la vecchia x del vettore, la nuova dovrà essere la vecchia moltiplicato -1
         shot.SendMessage("OnTriggerEnter2D", collider);
-        Assert.AreEqual(oldX, shot.GetActualDir().direction.x * -1);
+		Assert.AreEqual(oldX, shot.GetDifference().x * -1);
     }
 
 
@@ -106,9 +106,9 @@ public class MoverTests {
         var collider = r.gameObject.AddComponent<BoxCollider2D>(); // gli do un collider che passerò poi a OnTriggeredEnter2D
         background.GetComponent<BoxCollider2D>().offset = new Vector2(1, 0); // vado a definire l'offset che serve a capire in quale bordo è avvenuta la collisione (per maggiori informazioni vedere CheckCollider in Mover.cs)
         yield return null;
-        var oldY = shot.GetActualDir().direction.y; // ottengo la vecchia y del vettore, la nuova dovrà essere uguale
+        var oldY = shot.GetDifference().y; // ottengo la vecchia y del vettore, la nuova dovrà essere uguale
         shot.SendMessage("OnTriggerEnter2D", collider);
-        Assert.AreEqual(oldY, shot.GetActualDir().direction.y);
+        Assert.AreEqual(oldY, shot.GetDifference().y);
     }
 
 
@@ -121,9 +121,9 @@ public class MoverTests {
         var collider = r.gameObject.AddComponent<BoxCollider2D>(); // gli do un collider che passerò poi a OnTriggeredEnter2D
         background.GetComponent<BoxCollider2D>().offset = new Vector2(0, 1); // vado a definire l'offset che serve a capire in quale bordo è avvenuta la collisione (per maggiori informazioni vedere CheckCollider in Mover.cs)
         yield return null;
-        var oldX = shot.GetActualDir().direction.x; // ottengo la vecchia x del vettore, la nuova dovrà essere uguale
+        var oldX = shot.GetDifference().x; // ottengo la vecchia x del vettore, la nuova dovrà essere uguale
         shot.SendMessage("OnTriggerEnter2D", collider);
-        Assert.AreEqual(oldX, shot.GetActualDir().direction.x);
+        Assert.AreEqual(oldX, shot.GetDifference().x);
     }
 
 
@@ -138,9 +138,9 @@ public class MoverTests {
         var collider = r.gameObject.AddComponent<BoxCollider2D>(); // gli do un collider che passerò poi a OnTriggeredEnter2D
         background.GetComponent<BoxCollider2D>().offset = new Vector2(0, 1); // vado a definire l'offset che serve a capire in quale bordo è avvenuta la collisione (per maggiori informazioni vedere CheckCollider in Mover.cs)
         yield return null;
-        var oldY = shot.GetActualDir().direction.y; // ottengo la vecchia y del vettore, la nuova dovrà essere la vecchia moltiplicato -1
+        var oldY = shot.GetDifference().y; // ottengo la vecchia y del vettore, la nuova dovrà essere la vecchia moltiplicato -1
         shot.SendMessage("OnTriggerEnter2D", collider);
-        Assert.AreEqual(oldY, shot.GetActualDir().direction.y * -1);
+        Assert.AreEqual(oldY, shot.GetDifference().y * -1);
     }
 
 

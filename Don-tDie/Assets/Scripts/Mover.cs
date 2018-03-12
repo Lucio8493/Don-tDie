@@ -9,29 +9,24 @@ public class Mover : MonoBehaviour {
     public int bounces; // i rimbalzi che il colpo deve fare prima di essere eliminato e scomparire dal gioco, se si vuole modificare il valore lo si trova in /Assets/Prefabs/Shot
 
 	private Rigidbody2D rb;
-	private Ray2D ActualDir;
 	private int count; // i rimbalzi che il colpo ha gia fatto
-    private Vector3 difference; // il vettore della direzione del colpo, mi servirà poi per andare a calcolare la direzione dopo il rimbalzo
+    private Vector2 difference; // il vettore della direzione del colpo, mi servirà poi per andare a calcolare la direzione dopo il rimbalzo
 
 
 
-    public Vector3 GetDifference() // get che serve per il testing, restitisce il vettore direzione
+    public Vector2 GetDifference() // get che serve per il testing, restitisce il vettore direzione
     {
         return difference;
     }
 
-    public Ray2D GetActualDir()  // get che serve per il testing
-    {
-        return ActualDir;
-    }
-
+   
 
 
 	//Metodi per il settaggio dello stato  nellla fase di testing
-	public void Construct ( float speed, int bounces, Ray2D ActualDir, int count, Vector3 difference){
+	public void Construct ( float speed, int bounces,  int count, Vector2 difference){
 		this.speed = speed;
 		this.bounces = bounces;
-		this.ActualDir = ActualDir;
+	//	this.ActualDir = ActualDir;
 		this.count = count;
 		this.difference = difference;
 	}
@@ -54,12 +49,11 @@ public class Mover : MonoBehaviour {
 			difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; 
 		}
 		catch(System.NullReferenceException e){
-			difference = new Vector3 (4, 4, 0);
+			difference = new Vector2(4, 4);
 		}
 
 		difference.Normalize();
-		ActualDir = new Ray2D (transform.position, difference);
-		rb.AddForce (ActualDir.direction * speed);
+		rb.AddForce (difference * speed);
 		count = 0;
 	}
 
@@ -70,8 +64,7 @@ public class Mover : MonoBehaviour {
         }
 		else if(other.gameObject.CompareTag ("Shot")){ // in questo if entriamo se un colpo ("shot") collide con un altro colpo
 			rb.velocity =new Vector2(0.0f,0.0f);
-            difference = new Vector3(-1 * difference.x, -1*difference.y, difference.z); // quando un colpo collide con un un altro va nella direzione opposta a quella in cui andava prima
-            ActualDir = new Ray2D(transform.position, difference);
+            difference = new Vector2(-1 * difference.x, -1*difference.y); // quando un colpo collide con un un altro va nella direzione opposta a quella in cui andava prima
             Bounce();
 
 
@@ -81,14 +74,13 @@ public class Mover : MonoBehaviour {
 			int collider = CheckCollider (other);
             if (collider == 1 || collider == 3) // se  collider è uno o tre il colpo si è scontrato con il muro di destra o sinistra, in questo caso va invertita la componente x
             {
-                difference = new Vector3(-1 * difference.x, difference.y, difference.z);
+                difference = new Vector2(-1 * difference.x, difference.y);
             } else // se invece collider è due oppure quattro il colpo si è scontrato con un muro superiore o inveriore, in questo caso va cambiata la componente y 
             {
-                difference = new Vector3(difference.x, -1 * difference.y, difference.z);
+                difference = new Vector2(difference.x, -1 * difference.y);
 
             }
 
-            ActualDir = new Ray2D(transform.position, difference);
             Bounce();
             
         }
@@ -111,7 +103,8 @@ public class Mover : MonoBehaviour {
 
 	void Bounce(){
 		speed = 1.2f * speed;
-		rb.AddForce (ActualDir.direction * speed);
+		rb.AddForce (difference * speed);
+
 		if (count >= bounces) {   // se count è uguale a "bounces" allora il colpo ha fatto abbastanza rimbalzi e può essere eliminato. (per sapere di più su bounces vedere sopra)
 			Destroy (this.gameObject);
 			GameObject pl = GameObject.FindGameObjectWithTag ("Player");
