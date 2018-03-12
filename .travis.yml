@@ -1,0 +1,30 @@
+# Non e' stato specificato alcun linguaggio principale da utilizzare sul proggetto
+language: generic
+
+# Macchina virtuale con OSX
+os: osx
+
+# Avviare la build ad ogni push solo sul branch principale 
+branches:
+  only:
+  - master
+
+# Verra' notificata via mail il fallimento di una build
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+# Avvio dello script per scaricare e installare lo Unity Editor
+install:
+- sudo -E sh ./Scripts/install.sh
+
+# Avvio dello script che avvia le build
+script:
+- sudo -E sh ./Scripts/build.sh
+
+
+# Settaggio di una variabile globale utilizzata dagli script sh
+env:
+  global:
+  - UNITYCI_PROJECT_NAME="Don-tDie"
